@@ -673,7 +673,7 @@ REGIONS: tuple[BrainRegion, ...] = (
         radii=(0.22, 0.12, 0.09),
     ),
     BrainRegion(
-        name="Regiões mesocorticolímbicas NMDA",
+        name="Regiões mesocorticolímbicas",
         category="Slide 5 - Glutamatérgica",
         color="#E6C229",
         function="Regiões mesocorticolímbicas com alta densidade de receptores NMDA.",
@@ -681,39 +681,6 @@ REGIONS: tuple[BrainRegion, ...] = (
         kind="cortex",
         theta_range=(0.24, 2.18),
         phi_range=(-0.28, 0.88),
-    ),
-    BrainRegion(
-        name="Receptor NMDA - canal de Ca2+",
-        category="Slide 5 - Glutamatérgica",
-        color="#4E79A7",
-        function="Receptor ionotrópico controlado por ligantes e condutor de corrente de cálcio.",
-        note="Bloco molecular conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.10, 0.62),
-        radii=(0.28, 0.16, 0.12),
-    ),
-    BrainRegion(
-        name="Subunidades GluN1/GluN2/GluN3",
-        category="Slide 5 - Glutamatérgica",
-        color="#4E79A7",
-        function="Heterotetrâmeros de subunidades NMDA.",
-        note="Bloco molecular conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.48, 0.66),
-        radii=(0.24, 0.13, 0.10),
-    ),
-    BrainRegion(
-        name="Antagonistas NMDA - ketamina e análogos",
-        category="Slide 5 - Glutamatérgica",
-        color="#E15759",
-        function="Bloqueio/antagonismo do receptor NMDA.",
-        note="Bloco farmacológico conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, -0.24, 0.74),
-        radii=(0.28, 0.14, 0.10),
     ),
     BrainRegion(
         name="Hipocampo ventral",
@@ -726,7 +693,7 @@ REGIONS: tuple[BrainRegion, ...] = (
         tube_radius=0.062,
     ),
     BrainRegion(
-        name="Córtex pré-frontal medial NMDA",
+        name="Córtex pré-frontal medial",
         category="Slide 5 - Glutamatérgica",
         color="#76B7B2",
         function="Região citada para interneurônios GABAérgicos e desinibição glutamatérgica.",
@@ -736,37 +703,7 @@ REGIONS: tuple[BrainRegion, ...] = (
         phi_range=(0.06, 0.82),
     ),
     BrainRegion(
-        name="Interneurônios GABAérgicos mPFC",
-        category="Slide 5 - Glutamatérgica",
-        color="#F28E2B",
-        function="Alvo de inibição NMDA no córtex pré-frontal medial.",
-        note="Representação cortical esquemática.",
-        kind="cortex",
-        theta_range=(0.34, 0.78),
-        phi_range=(0.16, 0.62),
-    ),
-    BrainRegion(
-        name="Neurônios piramidais glutamatérgicos",
-        category="Slide 5 - Glutamatérgica",
-        color="#59A14F",
-        function="Neurônios glutamatérgicos desinibidos após bloqueio de NMDA em interneurônios GABAérgicos.",
-        note="Representação cortical esquemática.",
-        kind="cortex",
-        theta_range=(0.72, 1.18),
-        phi_range=(0.16, 0.72),
-    ),
-    BrainRegion(
-        name="Pico de disparo glutamatérgico",
-        category="Slide 5 - Glutamatérgica",
-        color="#59A14F",
-        function="Pico de disparo glutamatérgico citado no mecanismo.",
-        note="Conexão cortical esquemática.",
-        kind="tube",
-        curve="gaba_pyramidal",
-        tube_radius=0.026,
-    ),
-    BrainRegion(
-        name="BDNF/TrkB no córtex límbico",
+        name="Córtex límbico",
         category="Slide 5 - Glutamatérgica",
         color="#B07AA1",
         function="Expressão de BDNF mRNA e receptor trkB após bloqueio de NMDA.",
@@ -774,28 +711,6 @@ REGIONS: tuple[BrainRegion, ...] = (
         kind="cortex",
         theta_range=(0.62, 1.90),
         phi_range=(0.58, 1.02),
-    ),
-    BrainRegion(
-        name="Lavanda/linalol no NMDA",
-        category="Slide 5 - Glutamatérgica",
-        color="#B07AA1",
-        function="Afinidade/inibição relacionada ao receptor NMDA descrita no texto.",
-        note="Bloco farmacológico conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, -0.58, 0.68),
-        radii=(0.26, 0.14, 0.10),
-    ),
-    BrainRegion(
-        name="Docking amitriptilina GluN1/GluN2B",
-        category="Slide 5 - Glutamatérgica",
-        color="#9C755F",
-        function="Interação molecular descrita para amitriptilina e NMDAr.",
-        note="Bloco molecular conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.82, 0.72),
-        radii=(0.28, 0.14, 0.10),
     ),
     BrainRegion(
         name="Citocinas inflamatórias TNF-α/IL-1β/IL-6",
@@ -1449,34 +1364,20 @@ SLIDE_4_GROUPS = {
     "Bolsões S1/S2 e seletividade": SLIDE_4_BINDING_NAMES,
 }
 
-SLIDE_5_NMDA_SYSTEM_NAMES = {
-    "Regiões mesocorticolímbicas NMDA",
-    "Receptor NMDA - canal de Ca2+",
-    "Subunidades GluN1/GluN2/GluN3",
+SLIDE_5_MESOCORTICOLIMBIC_NAMES = {
+    "Regiões mesocorticolímbicas",
 }
 
-SLIDE_5_ANTAGONIST_NAMES = {
-    "Antagonistas NMDA - ketamina e análogos",
+SLIDE_5_VENTRAL_HIPPOCAMPUS_NAMES = {
     "Hipocampo ventral",
-    "Córtex pré-frontal medial NMDA",
 }
 
-SLIDE_5_DISINHIBITION_NAMES = {
-    "Interneurônios GABAérgicos mPFC",
-    "Neurônios piramidais glutamatérgicos",
-    "Pico de disparo glutamatérgico",
+SLIDE_5_MEDIAL_PFC_NAMES = {
+    "Córtex pré-frontal medial",
 }
 
-SLIDE_5_BDNF_NAMES = {
-    "BDNF/TrkB no córtex límbico",
-}
-
-SLIDE_5_NATURAL_NAMES = {
-    "Lavanda/linalol no NMDA",
-}
-
-SLIDE_5_DOCKING_NAMES = {
-    "Docking amitriptilina GluN1/GluN2B",
+SLIDE_5_LIMBIC_CORTEX_NAMES = {
+    "Córtex límbico",
 }
 
 SLIDE_5_CONTEXT_NAMES = {
@@ -1484,12 +1385,10 @@ SLIDE_5_CONTEXT_NAMES = {
 }
 
 SLIDE_5_GROUPS = {
-    "NMDA em regiões mesocorticolímbicas": SLIDE_5_NMDA_SYSTEM_NAMES,
-    "Antagonistas NMDA": SLIDE_5_ANTAGONIST_NAMES,
-    "Desinibição glutamatérgica mPFC": SLIDE_5_DISINHIBITION_NAMES,
-    "BDNF/TrkB e neurogênese": SLIDE_5_BDNF_NAMES,
-    "Lavanda/linalol": SLIDE_5_NATURAL_NAMES,
-    "Docking amitriptilina GluN1/GluN2B": SLIDE_5_DOCKING_NAMES,
+    "Regiões mesocorticolímbicas": SLIDE_5_MESOCORTICOLIMBIC_NAMES,
+    "Hipocampo ventral": SLIDE_5_VENTRAL_HIPPOCAMPUS_NAMES,
+    "Córtex pré-frontal medial": SLIDE_5_MEDIAL_PFC_NAMES,
+    "Córtex límbico": SLIDE_5_LIMBIC_CORTEX_NAMES,
 }
 
 SLIDE_6_CYTOKINE_NAMES = {
@@ -1611,12 +1510,10 @@ PRESENTATION_REGION_NAMES = (
     | SLIDE_4_PROJECTION_NAMES
     | SLIDE_4_BDNF_NAMES
     | SLIDE_4_BINDING_NAMES
-    | SLIDE_5_NMDA_SYSTEM_NAMES
-    | SLIDE_5_ANTAGONIST_NAMES
-    | SLIDE_5_DISINHIBITION_NAMES
-    | SLIDE_5_BDNF_NAMES
-    | SLIDE_5_NATURAL_NAMES
-    | SLIDE_5_DOCKING_NAMES
+    | SLIDE_5_MESOCORTICOLIMBIC_NAMES
+    | SLIDE_5_VENTRAL_HIPPOCAMPUS_NAMES
+    | SLIDE_5_MEDIAL_PFC_NAMES
+    | SLIDE_5_LIMBIC_CORTEX_NAMES
     | SLIDE_6_CYTOKINE_NAMES
     | SLIDE_6_ANTIDEPRESSANT_NAMES
     | SLIDE_6_TNF_NAMES
@@ -1868,8 +1765,8 @@ SERT_NET_BINDING_HOVER_TEXT = _wrap_hover_text(
     ),
 )
 
-NMDA_SYSTEM_HOVER_TEXT = _wrap_hover_text(
-    "Via glutamatérgica - receptor NMDA",
+NMDA_MESOCORTICOLIMBIC_HOVER_TEXT = _wrap_hover_text(
+    "Via glutamatérgica - regiões mesocorticolímbicas",
     (
         "A modulação da via glutamatérgica é alvo de estudos sobre ansiolíticos e antidepressivos. "
         "O glutamato é um neurotransmissor excitatório que atua em receptores ionotrópicos e metabotrópicos."
@@ -1884,47 +1781,51 @@ NMDA_SYSTEM_HOVER_TEXT = _wrap_hover_text(
     ),
     (
         "Sua estrutura cristalográfica é composta por heterotetrâmeros das subunidades GluN1 e "
-        "GluN2A/B/C/D, ou GluN3A/B. Domínios carboxiterminais e aminoterminais são importantes para "
+        "GluN2A/B/C/D, ou GluN3A/B. Os domínios carboxiterminais e aminoterminais são importantes para "
         "atividade regulatória."
     ),
+    (
+        "O óleo essencial de lavanda e seus constituintes demonstraram afinidade dose-dependente ao "
+        "receptor glutamatérgico NMDA; estudos mostraram que o linalol inibe receptores NMDA."
+    ),
 )
 
-NMDA_ANTAGONIST_HOVER_TEXT = _wrap_hover_text(
-    "Antagonistas NMDA",
+NMDA_VENTRAL_HIPPOCAMPUS_HOVER_TEXT = _wrap_hover_text(
+    "Hipocampo ventral - receptor NMDA",
+    (
+        "Agentes que bloqueiam o receptor NMDA após a dissociação do glutamato em regiões como o "
+        "hipocampo ventral e o córtex pré-frontal podem afetar o comportamento emocional."
+    ),
+    (
+        "Estudos com camundongos knockout mostraram que a deleção de subunidades do receptor e a "
+        "administração intra-hipocampal de fármacos podem melhorar ansiedade e depressão."
+    ),
     (
         "Estudos pré-clínicos mostraram que antagonistas do receptor NMDA, como ketamina e análogos "
-        "como fenciclidina e dizocilpina, atuam diminuindo a atividade do canal, reduzindo influxo de Ca2+ "
-        "e mediando correntes."
-    ),
-    (
-        "Em doses subanestésicas, a ketamina atua na fisiopatologia de transtornos psiquiátricos e "
-        "atinge tecido cerebral em concentrações micromolares."
-    ),
-    (
-        "Agentes que bloqueiam o receptor NMDA após a dissociação do glutamato em regiões como "
-        "hipocampo ventral e córtex pré-frontal podem afetar comportamento emocional."
-    ),
-    (
-        "Estudos com camundongos knockout mostraram que deleção de subunidades do receptor e administração "
-        "intra-hipocampal de fármacos podem melhorar ansiedade e depressão."
+        "como fenciclidina e dizocilpina, diminuem a atividade do canal, reduzem influxo de Ca2+ e "
+        "medeiam correntes."
     ),
 )
 
-NMDA_DISINHIBITION_HOVER_TEXT = _wrap_hover_text(
-    "Desinibição glutamatérgica no mPFC",
+NMDA_MEDIAL_PFC_HOVER_TEXT = _wrap_hover_text(
+    "Córtex pré-frontal medial - desinibição glutamatérgica",
     (
         "Dados clínicos sugerem que antagonistas podem estar relacionados à restauração de plasticidade "
-        "cerebral maladaptada por inibição de receptores NMDA em interneurônios GABAérgicos no córtex "
+        "cerebral desadaptada por inibição de receptores NMDA em interneurônios GABAérgicos no córtex "
         "pré-frontal medial."
     ),
     (
         "Esse processo resulta em desinibição de neurônios piramidais glutamatérgicos e pico de disparo "
         "glutamatérgico."
     ),
+    (
+        "Em doses subanestésicas, a ketamina atua na fisiopatologia de transtornos psiquiátricos e atinge "
+        "tecido cerebral em concentrações micromolares."
+    ),
 )
 
-NMDA_BDNF_HOVER_TEXT = _wrap_hover_text(
-    "BDNF/TrkB e neurogênese",
+NMDA_LIMBIC_CORTEX_HOVER_TEXT = _wrap_hover_text(
+    "Córtex límbico - BDNF/TrkB e GluN2B",
     (
         "O bloqueio de receptores NMDA por antagonistas como memantina pode induzir maior expressão de "
         "BDNF mRNA e de seu receptor trkB no córtex límbico de ratos."
@@ -1933,46 +1834,10 @@ NMDA_BDNF_HOVER_TEXT = _wrap_hover_text(
         "Isso melhora a função neurogênica, apontada no texto como uma base fisiopatológica da ansiedade "
         "e da depressão."
     ),
-)
-
-NMDA_NATURAL_HOVER_TEXT = _wrap_hover_text(
-    "Lavanda/linalol no receptor NMDA",
-    (
-        "O óleo essencial de lavanda, usado em aromaterapia para transtornos psiquiátricos, apresenta alta "
-        "composição de linalol e acetato de linalila, precursores de THL."
-    ),
-    (
-        "Investigações demonstraram alta afinidade dose-dependente ao receptor glutamatérgico NMDA, com "
-        "IC50 de 0,04 μl/mL para óleo de lavanda."
-    ),
-    (
-        "Estudos mostraram que o linalol inibe receptores NMDA, influenciando preferência condicionada por "
-        "local induzida por morfina, aquisição e reintegração, fatores predisponentes de tolerância e "
-        "dependência de opioides."
-    ),
-)
-
-NMDA_DOCKING_HOVER_TEXT = _wrap_hover_text(
-    "Docking amitriptilina GluN1/GluN2B",
     (
         "Estudos de docking molecular com amitriptilina e NMDAr em GluN1/GluN2B revelaram posição "
-        "energeticamente estável influenciada pela pose tricíclica, estabilizada em forma de V."
-    ),
-    (
-        "Simulações de dinâmica molecular revelaram que o hidrogênio da amina da amitriptilina interage "
-        "com o oxigênio da asparagina N612 de uma subunidade GluN2B a 1,7 Å."
-    ),
-    (
-        "A estabilização no canal é favorecida por interações hidrofóbicas com aminoácidos alifáticos "
-        "sem carga nas hélices M3 de todas as subunidades NMDAr."
-    ),
-    (
-        "Os aminoácidos responsáveis pela interação na posição V são GluN1 V642, GluN1 T646, "
-        "GluN2B L640 e GluN2B T644."
-    ),
-    (
-        "Receptores contendo subunidades GluN2B respondem por cerca de 80% das correntes despolarizantes "
-        "em neurônios corticais em culturas primárias."
+        "energeticamente estável; receptores contendo subunidades GluN2B respondem por cerca de 80% das "
+        "correntes despolarizantes em neurônios corticais em culturas primárias."
     ),
 )
 
@@ -2383,18 +2248,14 @@ def _hover_text_for_region(region: BrainRegion) -> str:
         return IMMUNE_LPS_HOVER_TEXT
     if region.name in SLIDE_6_CB1_NAMES:
         return IMMUNE_CB1_HOVER_TEXT
-    if region.name in SLIDE_5_NMDA_SYSTEM_NAMES:
-        return NMDA_SYSTEM_HOVER_TEXT
-    if region.name in SLIDE_5_ANTAGONIST_NAMES:
-        return NMDA_ANTAGONIST_HOVER_TEXT
-    if region.name in SLIDE_5_DISINHIBITION_NAMES:
-        return NMDA_DISINHIBITION_HOVER_TEXT
-    if region.name in SLIDE_5_BDNF_NAMES:
-        return NMDA_BDNF_HOVER_TEXT
-    if region.name in SLIDE_5_NATURAL_NAMES:
-        return NMDA_NATURAL_HOVER_TEXT
-    if region.name in SLIDE_5_DOCKING_NAMES:
-        return NMDA_DOCKING_HOVER_TEXT
+    if region.name in SLIDE_5_MESOCORTICOLIMBIC_NAMES:
+        return NMDA_MESOCORTICOLIMBIC_HOVER_TEXT
+    if region.name in SLIDE_5_VENTRAL_HIPPOCAMPUS_NAMES:
+        return NMDA_VENTRAL_HIPPOCAMPUS_HOVER_TEXT
+    if region.name in SLIDE_5_MEDIAL_PFC_NAMES:
+        return NMDA_MEDIAL_PFC_HOVER_TEXT
+    if region.name in SLIDE_5_LIMBIC_CORTEX_NAMES:
+        return NMDA_LIMBIC_CORTEX_HOVER_TEXT
     if region.name in SLIDE_4_TRANSPORTER_NAMES:
         return SERT_NET_HOVER_TEXT
     if region.name in SLIDE_4_ION_NAMES:
@@ -2785,12 +2646,10 @@ with control_column:
             default=[],
         )
         visible_regions = regions_for_names(
-            SLIDE_5_NMDA_SYSTEM_NAMES
-            | SLIDE_5_ANTAGONIST_NAMES
-            | SLIDE_5_DISINHIBITION_NAMES
-            | SLIDE_5_BDNF_NAMES
-            | SLIDE_5_NATURAL_NAMES
-            | SLIDE_5_DOCKING_NAMES
+            SLIDE_5_MESOCORTICOLIMBIC_NAMES
+            | SLIDE_5_VENTRAL_HIPPOCAMPUS_NAMES
+            | SLIDE_5_MEDIAL_PFC_NAMES
+            | SLIDE_5_LIMBIC_CORTEX_NAMES
         )
         selected_names = region_names_for_slide_5_groups(selected_groups)
         context_regions = regions_for_names(SLIDE_5_CONTEXT_NAMES)
