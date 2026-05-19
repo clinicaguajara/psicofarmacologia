@@ -557,122 +557,6 @@ REGIONS: tuple[BrainRegion, ...] = (
         radii=(0.22, 0.12, 0.09),
     ),
     BrainRegion(
-        name="Transportador SERT",
-        category="Slide 4 - SERT/NET",
-        color="#E15759",
-        function="Transportador de serotonina.",
-        note="Representação conceitual em região serotoninérgica.",
-        kind="cylinder",
-        hemispheres=("left", "right"),
-        center=(0.0, -0.34, -0.98),
-        radii=(0.07, 0.09, 0.0),
-        z_range=(-1.38, -0.52),
-    ),
-    BrainRegion(
-        name="Transportador NET",
-        category="Slide 4 - SERT/NET",
-        color="#4E79A7",
-        function="Transportador de noradrenalina.",
-        note="Representação conceitual no sistema noradrenérgico.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, -0.56, -0.60),
-        radii=(0.22, 0.17, 0.13),
-    ),
-    BrainRegion(
-        name="Gradiente Na+/Cl-",
-        category="Slide 4 - SERT/NET",
-        color="#E6C229",
-        function="Força de transporte dependente de Na+ e Cl-.",
-        note="Representação conceitual da força de recaptação.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, -0.18, 0.62),
-        radii=(0.24, 0.14, 0.10),
-    ),
-    BrainRegion(
-        name="Via 5-HT para centros emocionais e somáticos",
-        category="Slide 4 - SERT/NET",
-        color="#E15759",
-        function="Projeções serotoninérgicas para centros emocionais e somáticos.",
-        note="Representação didática.",
-        kind="tube",
-        curve="sert_limbic",
-        tube_radius=0.024,
-    ),
-    BrainRegion(
-        name="Via NA para córtex frontal",
-        category="Slide 4 - SERT/NET",
-        color="#4E79A7",
-        function="Projeção noradrenérgica para córtex frontal.",
-        note="Representação didática.",
-        kind="tube",
-        curve="net_frontal",
-        tube_radius=0.024,
-    ),
-    BrainRegion(
-        name="Via NA para amígdala",
-        category="Slide 4 - SERT/NET",
-        color="#4E79A7",
-        function="Projeção noradrenérgica para amígdala.",
-        note="Representação didática.",
-        kind="tube",
-        curve="net_amygdala",
-        tube_radius=0.024,
-    ),
-    BrainRegion(
-        name="Via NA para hipocampo",
-        category="Slide 4 - SERT/NET",
-        color="#4E79A7",
-        function="Projeção noradrenérgica para hipocampo.",
-        note="Representação didática.",
-        kind="tube",
-        curve="net_hippocampus",
-        tube_radius=0.024,
-    ),
-    BrainRegion(
-        name="Via NA para hipotálamo",
-        category="Slide 4 - SERT/NET",
-        color="#4E79A7",
-        function="Projeção noradrenérgica para hipotálamo.",
-        note="Representação didática.",
-        kind="tube",
-        curve="net_hypothalamus",
-        tube_radius=0.024,
-    ),
-    BrainRegion(
-        name="Neuroplasticidade hipocampal e BDNF",
-        category="Slide 4 - SERT/NET",
-        color="#59A14F",
-        function="Representação de proliferação hipocampal e BDNF citadas no texto.",
-        note="Sobreposição didática no hipocampo.",
-        kind="tube",
-        curve="hippocampus",
-        tube_radius=0.060,
-    ),
-    BrainRegion(
-        name="Bolsões S1/S2 de SERT/NET",
-        category="Slide 4 - SERT/NET",
-        color="#B07AA1",
-        function="Representação conceitual dos bolsões S1/S2.",
-        note="Bloco molecular conceitual, não anatômico.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.34, 0.58),
-        radii=(0.30, 0.16, 0.11),
-    ),
-    BrainRegion(
-        name="SERT - Asp-98 no Sítio A",
-        category="Slide 4 - SERT/NET",
-        color="#B07AA1",
-        function="Representação conceitual da seletividade do transportador 5-HT.",
-        note="Bloco molecular conceitual, não anatômico.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.66, 0.66),
-        radii=(0.22, 0.12, 0.09),
-    ),
-    BrainRegion(
         name="Regiões mesocorticolímbicas",
         category="Slide 5 - Glutamatérgica",
         color="#E6C229",
@@ -713,62 +597,7 @@ REGIONS: tuple[BrainRegion, ...] = (
         phi_range=(0.58, 1.02),
     ),
     BrainRegion(
-        name="Citocinas inflamatórias TNF-α/IL-1β/IL-6",
-        category="Slide 6 - Imuno-inflamatória",
-        color="#E15759",
-        function="Mediadores inflamatórios elevados em depressão e ansiedade.",
-        note="Bloco conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, -0.34, 0.68),
-        radii=(0.32, 0.16, 0.11),
-    ),
-    BrainRegion(
-        name="Citocina anti-inflamatória IL-10",
-        category="Slide 6 - Imuno-inflamatória",
-        color="#59A14F",
-        function="Citocina anti-inflamatória citada no trecho.",
-        note="Bloco conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, -0.62, 0.50),
-        radii=(0.22, 0.12, 0.09),
-    ),
-    BrainRegion(
-        name="Ativação serotoninérgica em células imunes",
-        category="Slide 6 - Imuno-inflamatória",
-        color="#4E79A7",
-        function="Mecanismo proposto para controle de citocinas por antidepressivos.",
-        note="Bloco conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, -0.02, 0.56),
-        radii=(0.28, 0.14, 0.10),
-    ),
-    BrainRegion(
-        name="cAMP-PKA-CREB",
-        category="Slide 6 - Imuno-inflamatória",
-        color="#4E79A7",
-        function="Via intracelular relacionada à redução de citocinas pró-inflamatórias.",
-        note="Bloco conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.30, 0.62),
-        radii=(0.25, 0.13, 0.09),
-    ),
-    BrainRegion(
-        name="TNF-α/TNFR1-TNFR2",
-        category="Slide 6 - Imuno-inflamatória",
-        color="#E15759",
-        function="Ligação de TNF-α a TNFR1/TNFR2.",
-        note="Bloco conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.62, 0.62),
-        radii=(0.28, 0.14, 0.10),
-    ),
-    BrainRegion(
-        name="Eixo HPA",
+        name="Hipotálamo/eixo HPA",
         category="Slide 6 - Imuno-inflamatória",
         color="#F28E2B",
         function="Eixo hipotálamo-hipófise-adrenal ativado por TNF-α.",
@@ -779,11 +608,11 @@ REGIONS: tuple[BrainRegion, ...] = (
         radii=(0.28, 0.22, 0.15),
     ),
     BrainRegion(
-        name="Atividade do transportador 5-HT",
+        name="Sistema serotoninérgico",
         category="Slide 6 - Imuno-inflamatória",
-        color="#E15759",
-        function="Aumento da atividade do transportador 5-HT induzido por TNF-α.",
-        note="Representação no sistema serotoninérgico.",
+        color="#4E79A7",
+        function="Sistema serotoninérgico associado a SERT, triptofano e efeitos de antidepressivos.",
+        note="Representação funcional no tronco encefálico.",
         kind="cylinder",
         hemispheres=("left", "right"),
         center=(0.0, -0.34, -0.98),
@@ -791,289 +620,25 @@ REGIONS: tuple[BrainRegion, ...] = (
         z_range=(-1.38, -0.52),
     ),
     BrainRegion(
-        name="Indoleamina 2,3-dioxigenase e triptofano",
-        category="Slide 6 - Imuno-inflamatória",
-        color="#F28E2B",
-        function="Diminuição de triptofano por estimulação de indoleamina 2,3-dioxigenase.",
-        note="Bloco conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.92, 0.54),
-        radii=(0.30, 0.14, 0.10),
-    ),
-    BrainRegion(
-        name="Microglia e plasticidade sináptica",
+        name="Circuito cortical-límbico imuno-inflamatório",
         category="Slide 6 - Imuno-inflamatória",
         color="#9C755F",
-        function="Ativação de microglia e redução de marcadores de plasticidade sináptica.",
+        function="Ativação de microglia, alteração de plasticidade e efeitos comportamentais mediados por citocinas.",
         note="Representação cortical-límbica esquemática.",
         kind="cortex",
         theta_range=(0.52, 2.05),
         phi_range=(0.20, 0.92),
     ),
     BrainRegion(
-        name="Via TNF-α TLR-4/NF-κB",
-        category="Slide 6 - Imuno-inflamatória",
-        color="#B07AA1",
-        function="Via inflamatória bloqueada por etanercepte no texto.",
-        note="Bloco conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 1.22, 0.38),
-        radii=(0.28, 0.14, 0.10),
-    ),
-    BrainRegion(
-        name="Anti-TNF-α etanercepte/infliximabe",
+        name="Estriado: CB1/GABA",
         category="Slide 6 - Imuno-inflamatória",
         color="#59A14F",
-        function="Agentes anti-TNF-α citados no texto.",
-        note="Bloco farmacológico conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 1.44, 0.18),
-        radii=(0.30, 0.14, 0.10),
-    ),
-    BrainRegion(
-        name="LPS/endotoxina",
-        category="Slide 6 - Imuno-inflamatória",
-        color="#E15759",
-        function="Indutor de inflamação e liberação de IL-6/IL-1β.",
-        note="Bloco conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, -0.96, 0.34),
-        radii=(0.24, 0.12, 0.09),
-    ),
-    BrainRegion(
-        name="IL-6/IL-1β e comportamento",
-        category="Slide 6 - Imuno-inflamatória",
-        color="#E15759",
-        function="Influência sobre humor, anedonia, exploração, retraimento social e memória.",
-        note="Representação cortical-límbica esquemática.",
-        kind="cortex",
-        theta_range=(0.30, 2.20),
-        phi_range=(-0.20, 0.70),
-    ),
-    BrainRegion(
-        name="LTP: serotonina, plasticidade e HPA",
-        category="Slide 6 - Imuno-inflamatória",
-        color="#F28E2B",
-        function="Alterações que influenciam potenciação de longo prazo.",
-        note="Representação conceitual cortical-límbica.",
-        kind="cortex",
-        theta_range=(0.62, 2.10),
-        phi_range=(0.44, 1.02),
-    ),
-    BrainRegion(
-        name="Sistema endocanabinoide CB1 no estriado",
-        category="Slide 6 - Imuno-inflamatória",
-        color="#4E79A7",
-        function="Interferência de citocinas no sistema endocanabinoide CB1.",
+        function="Interferência de citocinas no sistema endocanabinoide CB1 e sinapses GABA.",
         note="Representação bilateral no estriado.",
         kind="ellipsoid",
         center=(0.0, 0.02, -0.10),
         radii=(0.18, 0.32, 0.13),
         pair_offset=0.36,
-    ),
-    BrainRegion(
-        name="Sinapses GABA no estriado",
-        category="Slide 6 - Imuno-inflamatória",
-        color="#4E79A7",
-        function="Sinapses GABA no estriado ligadas a efeitos ansiogênicos e depressivos.",
-        note="Representação bilateral no estriado.",
-        kind="ellipsoid",
-        center=(0.0, 0.02, -0.10),
-        radii=(0.14, 0.26, 0.10),
-        pair_offset=0.36,
-    ),
-    BrainRegion(
-        name="nNOS/sGC no hipotálamo",
-        category="Slide 7 - NO/cGMP",
-        color="#E15759",
-        function="Níveis elevados de nNOS e sGC em modelos de estresse.",
-        note="Representação no hipotálamo.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.05, -0.56),
-        radii=(0.28, 0.22, 0.15),
-    ),
-    BrainRegion(
-        name="nNOS/sGC no hipocampo",
-        category="Slide 7 - NO/cGMP",
-        color="#E15759",
-        function="Níveis elevados de nNOS e sGC em modelos de estresse.",
-        note="Representação no hipocampo.",
-        kind="tube",
-        curve="hippocampus",
-        tube_radius=0.062,
-    ),
-    BrainRegion(
-        name="nNOS/sGC no córtex pré-frontal",
-        category="Slide 7 - NO/cGMP",
-        color="#E15759",
-        function="Níveis elevados de nNOS e sGC em modelos de estresse.",
-        note="Representação cortical anterior.",
-        kind="cortex",
-        theta_range=(0.10, 0.72),
-        phi_range=(0.06, 0.82),
-    ),
-    BrainRegion(
-        name="Isoformas NOS: nNOS/eNOS/iNOS",
-        category="Slide 7 - NO/cGMP",
-        color="#4E79A7",
-        function="Três isoformas funcionais da nitric oxide synthase.",
-        note="Bloco conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, -0.42, 0.64),
-        radii=(0.30, 0.14, 0.10),
-    ),
-    BrainRegion(
-        name="L-arginina -> NO por nNOS",
-        category="Slide 7 - NO/cGMP",
-        color="#4E79A7",
-        function="Produção de NO a partir de L-arginina regulada por Ca2+.",
-        note="Bloco conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, -0.08, 0.62),
-        radii=(0.30, 0.14, 0.10),
-    ),
-    BrainRegion(
-        name="NO excessivo: estresse oxidativo/neuroinflamação",
-        category="Slide 7 - NO/cGMP",
-        color="#E15759",
-        function="Excesso de NO associado à piora de ansiedade e depressão.",
-        note="Representação cortical-límbica.",
-        kind="cortex",
-        theta_range=(0.30, 2.20),
-        phi_range=(-0.20, 0.80),
-    ),
-    BrainRegion(
-        name="Barreira hematoencefálica e células periféricas",
-        category="Slide 7 - NO/cGMP",
-        color="#F28E2B",
-        function="Dilatação/permeabilidade da barreira e migração de células inflamatórias.",
-        note="Faixa cortical externa esquemática.",
-        kind="cortex",
-        theta_range=(0.05, 2.55),
-        phi_range=(0.86, 1.16),
-    ),
-    BrainRegion(
-        name="O2- + NO -> ONOO-",
-        category="Slide 7 - NO/cGMP",
-        color="#B07AA1",
-        function="Formação de peroxinitrito.",
-        note="Bloco molecular conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.30, 0.64),
-        radii=(0.28, 0.14, 0.10),
-    ),
-    BrainRegion(
-        name="Dano oxidativo por peroxinitrito",
-        category="Slide 7 - NO/cGMP",
-        color="#B07AA1",
-        function="Peroxidação lipídica, dano ao DNA, disfunção proteica e depleção antioxidante.",
-        note="Representação cortical-límbica.",
-        kind="cortex",
-        theta_range=(0.56, 2.30),
-        phi_range=(0.26, 0.94),
-    ),
-    BrainRegion(
-        name="RyR1/Ca2+ e radicais livres",
-        category="Slide 7 - NO/cGMP",
-        color="#F28E2B",
-        function="NO ativa RyR1 e aumenta Ca2+ citosólico.",
-        note="Bloco conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.62, 0.58),
-        radii=(0.25, 0.13, 0.09),
-    ),
-    BrainRegion(
-        name="Exocitose de glutamato e NMDA",
-        category="Slide 7 - NO/cGMP",
-        color="#59A14F",
-        function="Aumento de exocitose de glutamato e excitotoxicidade por NMDA.",
-        note="Representação cortical.",
-        kind="cortex",
-        theta_range=(0.64, 1.80),
-        phi_range=(0.04, 0.72),
-    ),
-    BrainRegion(
-        name="NMDA hiperativo: Ca2+ -> nNOS -> NO",
-        category="Slide 7 - NO/cGMP",
-        color="#59A14F",
-        function="Fluxo pós-sináptico de Ca2+, superestimulação de nNOS e aumento de NO.",
-        note="Conexão conceitual.",
-        kind="tube",
-        curve="nmda_nnos_no",
-        tube_radius=0.026,
-    ),
-    BrainRegion(
-        name="NO -> sGC -> cGMP",
-        category="Slide 7 - NO/cGMP",
-        color="#4E79A7",
-        function="NO ativa sGC, convertendo GTP em cGMP.",
-        note="Bloco conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.92, 0.50),
-        radii=(0.24, 0.12, 0.09),
-    ),
-    BrainRegion(
-        name="Via L-arginina-NO-cGMP",
-        category="Slide 7 - NO/cGMP",
-        color="#4E79A7",
-        function="Via modulada por nNOS e sGC.",
-        note="Conexão conceitual.",
-        kind="tube",
-        curve="arginine_no_cgmp",
-        tube_radius=0.026,
-    ),
-    BrainRegion(
-        name="Inibição nNOS/sGC",
-        category="Slide 7 - NO/cGMP",
-        color="#59A14F",
-        function="Alvos valiosos para estratégias terapêuticas.",
-        note="Bloco terapêutico conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 1.20, 0.32),
-        radii=(0.26, 0.13, 0.09),
-    ),
-    BrainRegion(
-        name="Docking: L-NAME, 7NA, 7NI e azul de metileno",
-        category="Slide 7 - NO/cGMP",
-        color="#B07AA1",
-        function="Ensaio de docking com inibidores de nNOS.",
-        note="Bloco molecular conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 1.42, 0.12),
-        radii=(0.34, 0.15, 0.10),
-    ),
-    BrainRegion(
-        name="7NI: efeito antidepressivo e proteção serotoninérgica",
-        category="Slide 7 - NO/cGMP",
-        color="#59A14F",
-        function="Inibidor seletivo de nNOS com efeito antidepressivo em camundongos.",
-        note="Representação no hipocampo/serotonina.",
-        kind="tube",
-        curve="hippocampus",
-        tube_radius=0.048,
-    ),
-    BrainRegion(
-        name="Linalol/THL: NO e NMDA",
-        category="Slide 7 - NO/cGMP",
-        color="#9C755F",
-        function="Inibição da formação de NO e bloqueio de NMDA.",
-        note="Bloco natural/terapêutico conceitual.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, -0.76, 0.46),
-        radii=(0.28, 0.14, 0.10),
     ),
     BrainRegion(
         name="Córtex pré-frontal medial (5-HT1A)",
@@ -1327,29 +892,29 @@ SLIDE_3_GROUPS = {
 }
 
 SLIDE_4_TRANSPORTER_NAMES = {
-    "Transportador SERT",
-    "Transportador NET",
+    "Núcleos da rafe",
+    "Neurônios adrenérgicos centrais",
 }
 
 SLIDE_4_ION_NAMES = {
-    "Gradiente Na+/Cl-",
+    "Núcleos da rafe",
+    "Neurônios adrenérgicos centrais",
 }
 
 SLIDE_4_PROJECTION_NAMES = {
-    "Via 5-HT para centros emocionais e somáticos",
-    "Via NA para córtex frontal",
-    "Via NA para amígdala",
-    "Via NA para hipocampo",
-    "Via NA para hipotálamo",
+    "Córtex pré-frontal (PFC)",
+    "Amígdala",
+    "Hipocampo",
+    "Hipotálamo",
 }
 
 SLIDE_4_BDNF_NAMES = {
-    "Neuroplasticidade hipocampal e BDNF",
+    "Hipocampo",
 }
 
 SLIDE_4_BINDING_NAMES = {
-    "Bolsões S1/S2 de SERT/NET",
-    "SERT - Asp-98 no Sítio A",
+    "Núcleos da rafe",
+    "Neurônios adrenérgicos centrais",
 }
 
 SLIDE_4_CONTEXT_NAMES = {
@@ -1357,11 +922,11 @@ SLIDE_4_CONTEXT_NAMES = {
 }
 
 SLIDE_4_GROUPS = {
-    "Transportadores SERT/NET": SLIDE_4_TRANSPORTER_NAMES,
-    "Dependência Na+/Cl-": SLIDE_4_ION_NAMES,
-    "Projeções 5-HT/NA": SLIDE_4_PROJECTION_NAMES,
-    "Neuroplasticidade hipocampal/BDNF": SLIDE_4_BDNF_NAMES,
-    "Bolsões S1/S2 e seletividade": SLIDE_4_BINDING_NAMES,
+    "Sistemas de origem: rafe e noradrenérgico": SLIDE_4_TRANSPORTER_NAMES,
+    "Recaptação dependente de Na+/Cl-": SLIDE_4_ION_NAMES,
+    "Áreas alvo 5-HT/NA": SLIDE_4_PROJECTION_NAMES,
+    "Hipocampo: neuroplasticidade/BDNF": SLIDE_4_BDNF_NAMES,
+    "Ligação molecular e seletividade": SLIDE_4_BINDING_NAMES,
 }
 
 SLIDE_5_MESOCORTICOLIMBIC_NAMES = {
@@ -1392,37 +957,32 @@ SLIDE_5_GROUPS = {
 }
 
 SLIDE_6_CYTOKINE_NAMES = {
-    "Citocinas inflamatórias TNF-α/IL-1β/IL-6",
-    "Citocina anti-inflamatória IL-10",
+    "Circuito cortical-límbico imuno-inflamatório",
 }
 
 SLIDE_6_ANTIDEPRESSANT_NAMES = {
-    "Ativação serotoninérgica em células imunes",
-    "cAMP-PKA-CREB",
+    "Sistema serotoninérgico",
 }
 
 SLIDE_6_TNF_NAMES = {
-    "TNF-α/TNFR1-TNFR2",
-    "Eixo HPA",
-    "Atividade do transportador 5-HT",
-    "Indoleamina 2,3-dioxigenase e triptofano",
-    "Microglia e plasticidade sináptica",
+    "Hipotálamo/eixo HPA",
+    "Sistema serotoninérgico",
+    "Circuito cortical-límbico imuno-inflamatório",
 }
 
 SLIDE_6_ANTI_TNF_NAMES = {
-    "Via TNF-α TLR-4/NF-κB",
-    "Anti-TNF-α etanercepte/infliximabe",
+    "Hipotálamo/eixo HPA",
+    "Circuito cortical-límbico imuno-inflamatório",
 }
 
 SLIDE_6_LPS_NAMES = {
-    "LPS/endotoxina",
-    "IL-6/IL-1β e comportamento",
-    "LTP: serotonina, plasticidade e HPA",
+    "Hipotálamo/eixo HPA",
+    "Sistema serotoninérgico",
+    "Circuito cortical-límbico imuno-inflamatório",
 }
 
 SLIDE_6_CB1_NAMES = {
-    "Sistema endocanabinoide CB1 no estriado",
-    "Sinapses GABA no estriado",
+    "Estriado: CB1/GABA",
 }
 
 SLIDE_6_CONTEXT_NAMES = {
@@ -1430,51 +990,18 @@ SLIDE_6_CONTEXT_NAMES = {
 }
 
 SLIDE_6_GROUPS = {
-    "Citocinas pró/anti-inflamatórias": SLIDE_6_CYTOKINE_NAMES,
-    "SSRIs/tricíclicos e cAMP-PKA-CREB": SLIDE_6_ANTIDEPRESSANT_NAMES,
-    "TNF-α: HPA, SERT, triptofano e microglia": SLIDE_6_TNF_NAMES,
-    "Bloqueio TNF-α/TLR-4/NF-κB": SLIDE_6_ANTI_TNF_NAMES,
+    "Circuito cortical-límbico: citocinas e microglia": SLIDE_6_CYTOKINE_NAMES,
+    "Sistema serotoninérgico: antidepressivos, SERT e triptofano": SLIDE_6_ANTIDEPRESSANT_NAMES,
+    "Hipotálamo/eixo HPA: TNF-α e estresse": SLIDE_6_TNF_NAMES,
+    "Alvos anti-TNF-α: TLR-4/NF-κB": SLIDE_6_ANTI_TNF_NAMES,
     "LPS, IL-6/IL-1β e LTP": SLIDE_6_LPS_NAMES,
-    "CB1/GABA no estriado": SLIDE_6_CB1_NAMES,
+    "Estriado: CB1/GABA": SLIDE_6_CB1_NAMES,
 }
 
 SLIDE_7_NNOS_SGC_NAMES = {
-    "nNOS/sGC no hipotálamo",
-    "nNOS/sGC no hipocampo",
-    "nNOS/sGC no córtex pré-frontal",
-}
-
-SLIDE_7_NOS_NO_NAMES = {
-    "Isoformas NOS: nNOS/eNOS/iNOS",
-    "L-arginina -> NO por nNOS",
-    "NO excessivo: estresse oxidativo/neuroinflamação",
-}
-
-SLIDE_7_INFLAMMATION_NAMES = {
-    "Barreira hematoencefálica e células periféricas",
-    "O2- + NO -> ONOO-",
-    "Dano oxidativo por peroxinitrito",
-}
-
-SLIDE_7_NMDA_NAMES = {
-    "RyR1/Ca2+ e radicais livres",
-    "Exocitose de glutamato e NMDA",
-    "NMDA hiperativo: Ca2+ -> nNOS -> NO",
-}
-
-SLIDE_7_CGMP_NAMES = {
-    "NO -> sGC -> cGMP",
-    "Via L-arginina-NO-cGMP",
-}
-
-SLIDE_7_INHIBITOR_NAMES = {
-    "Inibição nNOS/sGC",
-    "Docking: L-NAME, 7NA, 7NI e azul de metileno",
-    "7NI: efeito antidepressivo e proteção serotoninérgica",
-}
-
-SLIDE_7_LINALOOL_NAMES = {
-    "Linalol/THL: NO e NMDA",
+    "Hipotálamo",
+    "Hipocampo",
+    "Córtex pré-frontal (PFC)",
 }
 
 SLIDE_7_CONTEXT_NAMES = {
@@ -1482,13 +1009,7 @@ SLIDE_7_CONTEXT_NAMES = {
 }
 
 SLIDE_7_GROUPS = {
-    "nNOS/sGC em estresse": SLIDE_7_NNOS_SGC_NAMES,
-    "NOS, L-arginina e NO": SLIDE_7_NOS_NO_NAMES,
-    "Neuroinflamação e peroxinitrito": SLIDE_7_INFLAMMATION_NAMES,
-    "Ca2+, glutamato e NMDA": SLIDE_7_NMDA_NAMES,
-    "NO-sGC-cGMP": SLIDE_7_CGMP_NAMES,
-    "Inibidores nNOS/sGC": SLIDE_7_INHIBITOR_NAMES,
-    "Linalol/THL": SLIDE_7_LINALOOL_NAMES,
+    "Áreas anatômicas associadas à via sGC/nNOS": SLIDE_7_NNOS_SGC_NAMES,
 }
 
 PRESENTATION_REGION_NAMES = (
@@ -1521,12 +1042,6 @@ PRESENTATION_REGION_NAMES = (
     | SLIDE_6_LPS_NAMES
     | SLIDE_6_CB1_NAMES
     | SLIDE_7_NNOS_SGC_NAMES
-    | SLIDE_7_NOS_NO_NAMES
-    | SLIDE_7_INFLAMMATION_NAMES
-    | SLIDE_7_NMDA_NAMES
-    | SLIDE_7_CGMP_NAMES
-    | SLIDE_7_INHIBITOR_NAMES
-    | SLIDE_7_LINALOOL_NAMES
 )
 
 
@@ -1697,31 +1212,46 @@ ALPHA2_SUBTYPE_HOVER_TEXT = _wrap_hover_text(
 )
 
 SERT_NET_HOVER_TEXT = _wrap_hover_text(
-    "Transportadores SERT/NET",
+    "Sistema serotoninérgico: SERT",
     (
-        "Serotonina e noradrenalina são neurotransmissores que podem ser recapturados pelos "
-        "transportadores de serotonina (SERT) e noradrenalina (NET)."
+        "Os núcleos da rafe são usados como referência anatômica para a via serotoninérgica. A serotonina "
+        "pode ser recaptada pelo transportador SERT, regulando sua concentração na fenda sináptica."
     ),
     (
-        "O papel desses transportadores é regular a concentração de neurotransmissores na fenda "
-        "sináptica e, consequentemente, as respostas desencadeadas."
+        "A recaptação por SERT ocorre por mecanismo dependente de Na+ e Cl- extracelulares, que constituem "
+        "a força motriz do transporte."
+    ),
+    (
+        "A parte molecular fica aglutinada neste hover: bolsões S1/S2, conformação potencial de ligação do "
+        "(S)-citalopram no bolsão S1 e seletividade relacionada ao Asp-98 no Sítio A da unidade S1."
+    ),
+    (
+        "O texto também cita linalol e beta-pireno como compostos com respostas parcialmente atribuídas à "
+        "ativação da via serotoninérgica, sem dados conclusivos como inibidores de recaptação 5-HT/NA."
     ),
 )
 
 SERT_NET_ION_HOVER_TEXT = _wrap_hover_text(
-    "Dependência Na+/Cl-",
+    "Sistema noradrenérgico: NET",
     (
-        "A recaptação por SERT e NET ocorre por um mecanismo dependente de Na+ e Cl- extracelulares, "
-        "que constituem a força motriz do transporte."
+        "O sistema noradrenérgico é usado como referência funcional para a recaptação de noradrenalina "
+        "pelo transportador NET."
+    ),
+    (
+        "A noradrenalina é produzida por neurônios que emergem do locus coeruleus e projetam para regiões "
+        "do SNC, incluindo córtex frontal, amígdala, hipocampo, hipotálamo e medula espinal."
+    ),
+    (
+        "Assim como SERT, a recaptação por NET é descrita como dependente de Na+ e Cl- extracelulares. "
+        "Detalhes de ligação, inibição e seletividade permanecem como mecanismo molecular, não como objeto 3D."
     ),
 )
 
 SERT_NET_PROJECTION_HOVER_TEXT = _wrap_hover_text(
-    "Projeções 5-HT/NA",
+    "Áreas alvo 5-HT/NA",
     (
-        "A noradrenalina é produzida por neurônios noradrenérgicos que emergem de corpos celulares "
-        "no locus coeruleus e projetam para diferentes regiões do SNC, incluindo córtex frontal, "
-        "amígdala, hipocampo, hipotálamo e medula espinal."
+        "Esta área é mantida no modelo como alvo anatômico das vias serotoninérgicas e noradrenérgicas, "
+        "que alcançam centros emocionais e somáticos."
     ),
     (
         "No sistema límbico, essa via participa de emoção, apetite, resposta à dor, prazer, "
@@ -1731,37 +1261,18 @@ SERT_NET_PROJECTION_HOVER_TEXT = _wrap_hover_text(
 )
 
 SERT_NET_BDNF_HOVER_TEXT = _wrap_hover_text(
-    "Neuroplasticidade hipocampal e BDNF",
+    "Hipocampo: SERT/NET, neuroplasticidade e BDNF",
     (
-        "A 5-HT é importante na neuroquímica da depressão e da ansiedade. Antidepressivos como SSRIs "
-        "induzem aumento da proliferação de células hipocampais e aumento da expressão de proteínas "
-        "relacionadas à neuroplasticidade, como BDNF."
-    ),
-)
-
-SERT_NET_BINDING_HOVER_TEXT = _wrap_hover_text(
-    "Bolsões S1/S2 e seletividade",
-    (
-        "Apesar de inibidores de SERT e NET serem usados na farmacoterapia de ansiedade e depressão, "
-        "seus mecanismos moleculares de ligação, inibição e seletividade ainda não estão totalmente elucidados."
+        "O hipocampo é alvo das vias 5-HT/NA e também concentra a leitura de neuroplasticidade do tópico."
     ),
     (
-        "Análises mutacionais sugerem ligação em regiões chamadas bolsões S1 e S2, com base em estruturas "
-        "cristalográficas de LeuT, em conformação de substrato ocluída voltada para fora da célula."
+        "A 5-HT é importante na neuroquímica da depressão e da ansiedade. Antidepressivos como SSRIs induzem "
+        "aumento da proliferação de células hipocampais e aumento da expressão de proteínas relacionadas à "
+        "neuroplasticidade, como BDNF."
     ),
     (
-        "Fármacos como (S)-citalopram apresentam conformação potencial de ligação no fundo do bolsão S1, "
-        "ocupando seus três subsítios."
-    ),
-    (
-        "Estudos de docking molecular sugerem base para seletividade do transportador 5-HT: a presença "
-        "do aminoácido Asp-98, com excesso de carga negativa no Sítio A da unidade S1. A ligação formada "
-        "é diretamente iônica com os grupos amino positivos da 5-HT e de inibidores de SERT."
-    ),
-    (
-        "Estudos com linalol e β-pireno indicaram respostas parcialmente devidas à ativação da via "
-        "serotoninérgica e à modulação da função adrenérgica por estimulação de receptores noradrenérgicos. "
-        "Ainda não há dados conclusivos sobre a atividade desses compostos como inibidores da recaptação de 5-HT e NA."
+        "Os mecanismos de SERT/NET, dependência Na+/Cl- e ligação molecular dos inibidores permanecem no "
+        "hover, sem criar bolsões ou gradientes como estruturas no cérebro."
     ),
 )
 
@@ -1842,49 +1353,61 @@ NMDA_LIMBIC_CORTEX_HOVER_TEXT = _wrap_hover_text(
 )
 
 IMMUNE_CYTOKINE_HOVER_TEXT = _wrap_hover_text(
-    "Citocinas pró/anti-inflamatórias",
+    "Circuito cortical-límbico: citocinas e microglia",
     (
-        "Nas últimas décadas, foi mostrado em pacientes com depressão e transtornos de ansiedade que há "
-        "correlações diretas entre disfunção imune e aumento de mediadores inflamatórios, como TNF-α, "
-        "IL-1β e IL-6."
+        "Esta região cortical-límbica é usada como referência funcional para efeitos comportamentais e de "
+        "plasticidade associados à inflamação no SNC."
     ),
     (
-        "Citocinas são proteínas ou polipeptídeos capazes de modular condições inflamatórias e imunológicas. "
-        "Ao atingir o SNC, participam da regulação neurofisiológica da plasticidade neural e de circuitos "
-        "que envolvem metabolismo de neurotransmissores e hormônios."
+        "O mecanismo transversal inclui aumento de mediadores inflamatórios como TNF-α, IL-1β e IL-6, além "
+        "de citocinas anti-inflamatórias como IL-10. Ao atingir o SNC, essas moléculas modulam plasticidade "
+        "neural, neurotransmissores e hormônios."
+    ),
+    (
+        "TNF-α também é relacionado à ativação de microglia, redução de marcadores de plasticidade sináptica "
+        "e aumento de eventos neurodegenerativos."
+    ),
+    (
+        "LPS/endotoxina é tratado aqui como gatilho experimental de inflamação, aumentando IL-6 e IL-1β. "
+        "Essas alterações podem se associar a anedonia, menor exploração, retraimento social, efeitos de "
+        "memória e mudanças de LTP."
+    ),
+    (
+        "Na leitura farmacológica, o bloqueio de TNF-α/TLR-4/NF-κB por agentes como etanercepte ou infliximabe "
+        "permanece como mecanismo no hover, não como estrutura do modelo."
     ),
 )
 
 IMMUNE_ANTIDEPRESSANT_HOVER_TEXT = _wrap_hover_text(
-    "SSRIs/tricíclicos e cAMP-PKA-CREB",
+    "Sistema serotoninérgico: SERT, triptofano e antidepressivos",
     (
-        "Inibidores de recaptação de serotonina (SSRIs) e antidepressivos tricíclicos reduzem níveis de "
-        "citocinas pró-inflamatórias e aumentam níveis de citocinas anti-inflamatórias, como IL-10."
+        "O sistema serotoninérgico é usado como referência funcional para os efeitos de TNF-α sobre SERT, "
+        "metabolismo do triptofano e resposta a antidepressivos."
     ),
     (
-        "Postula-se que isso ocorra por aumento da ativação de receptores serotoninérgicos em células imunes, "
-        "controlando a dinâmica de liberação de citocinas pró- e anti-inflamatórias."
+        "TNF-α aumenta a atividade do transportador 5-HT e estimula indoleamina 2,3-dioxigenase, diminuindo "
+        "a concentração de triptofano."
     ),
     (
-        "Outro mecanismo parece envolver aumento da produção de cAMP, ativação de PKA e aumento da produção "
-        "de CREB, o que diminui a produção de citocinas pró-inflamatórias."
+        "SSRIs e antidepressivos tricíclicos reduzem citocinas pró-inflamatórias e aumentam citocinas "
+        "anti-inflamatórias, como IL-10. O texto propõe ativação serotoninérgica em células imunes e aumento "
+        "de cAMP, PKA e CREB como vias associadas à redução de citocinas pró-inflamatórias."
     ),
 )
 
 IMMUNE_TNF_HOVER_TEXT = _wrap_hover_text(
-    "TNF-α: HPA, SERT, triptofano e microglia",
+    "Hipotálamo/eixo HPA: TNF-α e estresse",
     (
-        "TNF-α é uma citocina pleiotrópica com papel importante na regulação de funções cognitivas em "
-        "transtornos de ansiedade e depressão."
+        "O hipotálamo representa aqui o eixo hipotálamo-hipófise-adrenal, citado como alvo funcional da "
+        "sinalização inflamatória."
     ),
     (
-        "Seus efeitos biológicos ocorrem por ligação aos receptores TNFR1 e TNFR2. TNF-α ativa o eixo HPA, "
-        "aumenta a atividade do transportador 5-HT e estimula indoleamina 2,3-dioxigenase, diminuindo a "
-        "concentração de triptofano."
+        "TNF-α é uma citocina pleiotrópica. Seus efeitos biológicos ocorrem por ligação a TNFR1/TNFR2 e "
+        "incluem ativação do eixo HPA."
     ),
     (
-        "A molécula também está envolvida na ativação da microglia cerebral, observada por reduções de "
-        "marcadores de plasticidade sináptica e aumento de eventos neurodegenerativos."
+        "Alterações inflamatórias induzidas por LPS, IL-6 e IL-1β também são relacionadas no texto a mudanças "
+        "no eixo HPA e a alterações de plasticidade, incluindo LTP."
     ),
 )
 
@@ -1922,9 +1445,10 @@ IMMUNE_LPS_HOVER_TEXT = _wrap_hover_text(
 )
 
 IMMUNE_CB1_HOVER_TEXT = _wrap_hover_text(
-    "CB1/GABA no estriado",
+    "Estriado: CB1/GABA",
     (
-        "Mecanismos adicionais de interferência de citocinas foram descobertos no sistema endocanabinoide CB1."
+        "O estriado é mantido como área anatômica porque o texto localiza neste sistema a interferência de "
+        "citocinas sobre CB1 e sinapses GABA."
     ),
     (
         "Esses mecanismos contribuem para efeitos ansiogênicos e depressivos por meio de sinapses GABA "
@@ -1933,109 +1457,26 @@ IMMUNE_CB1_HOVER_TEXT = _wrap_hover_text(
 )
 
 NO_NNOS_SGC_HOVER_TEXT = _wrap_hover_text(
-    "nNOS/sGC em estresse",
+    "Via nNOS/sGC em áreas de estresse",
     (
-        "A ativação das enzimas sGC e nNOS é considerada uma via molecular importante para piora do humor "
-        "em pacientes com transtornos comportamentais."
+        "Hipotálamo, hipocampo e córtex pré-frontal são usados aqui como referência anatômica para os "
+        "achados de níveis elevados de nNOS e sGC em modelos animais de estresse."
     ),
     (
-        "Em modelos animais de estresse, níveis elevados de nNOS e sGC foram encontrados no hipotálamo, "
-        "hipocampo e córtex pré-frontal."
-    ),
-)
-
-NO_NOS_NO_HOVER_TEXT = _wrap_hover_text(
-    "NOS, L-arginina e NO",
-    (
-        "Em mamíferos há três isoformas funcionais de nitric oxide synthase: nNOS neuronal, eNOS endotelial "
-        "e iNOS induzível."
+        "A parte molecular é transversal ao hover: nNOS produz NO a partir de L-arginina; o NO pode ativar "
+        "sGC, converter GTP em cGMP e participar da via L-arginina-NO-cGMP relacionada a processos "
+        "comportamentais, cognitivos e emocionais."
     ),
     (
-        "A nNOS foi inicialmente descrita em neurônios, mas também pode ser encontrada em musculatura estriada "
-        "esquelética, epitélio brônquico e traqueia. Ela é regulada por níveis de Ca2+."
+        "Quando excessivo, NO é associado a estresse oxidativo e neuroinflamação, maior permeabilidade da "
+        "barreira hematoencefálica, formação de peroxinitrito, dano oxidativo e excitotoxicidade por "
+        "glutamato/NMDA com influxo de Ca2+."
     ),
     (
-        "Quando estimulada, a nNOS produz óxido nítrico a partir de L-arginina. Em excesso, o NO é associado "
-        "à piora de ansiedade e depressão por estimular estresse oxidativo e neuroinflamação."
+        "Como leitura farmacológica, a inibição de nNOS/sGC aparece como alvo terapêutico potencial; o texto "
+        "cita inibidores como 7NI e compostos como linalol/THL modulando NO, NMDA e nNOS."
     ),
 )
-
-NO_INFLAMMATION_HOVER_TEXT = _wrap_hover_text(
-    "Neuroinflamação e peroxinitrito",
-    (
-        "Como mediador pró-inflamatório, NO é fator-chave na iniciação de eventos que aumentam a atividade "
-        "neuroinflamatória, principalmente por promover dilatação e maior permeabilidade da barreira "
-        "hematoencefálica."
-    ),
-    (
-        "Isso favorece a migração de células inflamatórias periféricas para o tecido cerebral."
-    ),
-    (
-        "Em situações de estresse, células neuronais geram NO e ânion superóxido, que podem se unir para "
-        "formar peroxinitrito. O peroxinitrito é um oxidante poderoso capaz de iniciar peroxidação lipídica, "
-        "danificar DNA, causar disfunção proteica e depletar antioxidantes lipossolúveis."
-    ),
-)
-
-NO_NMDA_HOVER_TEXT = _wrap_hover_text(
-    "Ca2+, glutamato e NMDA",
-    (
-        "O NO também pode ativar receptores de rianodina tipo 1 no retículo endoplasmático e aumentar a "
-        "concentração de Ca2+ citosólico, resultando em mais radicais livres e maior exocitose de glutamato."
-    ),
-    (
-        "Isso leva à excitotoxicidade mediada pela ativação excessiva de receptores NMDA."
-    ),
-    (
-        "Em neurônios pós-sinápticos, receptores NMDA hiperativos causam influxo anormal de Ca2+, "
-        "superestimulação de nNOS e aumento da síntese de NO."
-    ),
-)
-
-NO_CGMP_HOVER_TEXT = _wrap_hover_text(
-    "NO-sGC-cGMP",
-    (
-        "NO tem como alvo a sGC, enzima responsável por converter GTP em cGMP."
-    ),
-    (
-        "A via L-arginina-NO-cGMP, modulada por nNOS e sGC, é uma importante via de sinalização provavelmente "
-        "envolvida na regulação de processos comportamentais, cognitivos e emocionais, incluindo ansiedade e depressão."
-    ),
-)
-
-NO_INHIBITOR_HOVER_TEXT = _wrap_hover_text(
-    "Inibidores nNOS/sGC",
-    (
-        "Estudos indicam que nNOS e sGC, por inibição, são alvos valiosos e fornecem estratégias efetivas "
-        "para terapia desses transtornos comportamentais."
-    ),
-    (
-        "Um ensaio de docking molecular investigou afinidade de ligação e atividade antidepressiva de "
-        "ésteres N'-metileno de omega-Nitro-L-arginina, L-NAME, 7NA, 7NI e azul de metileno com nNOS."
-    ),
-    (
-        "Foi observado que o acoplamento é favorecido por ligação de hidrogênio inibidor-alvo, formando "
-        "complexos estáveis em estados próximos de equilíbrio."
-    ),
-    (
-        "O uso de inibidores seletivos de nNOS, como 7NI, resultou em efeitos antidepressivos em camundongos, "
-        "com diminuição da imobilidade no teste de suspensão pela cauda e efeito protetor em terminações "
-        "serotoninérgicas hipocampais."
-    ),
-)
-
-NO_LINALOOL_HOVER_TEXT = _wrap_hover_text(
-    "Linalol/THL: NO e NMDA",
-    (
-        "Como possível mecanismo de atividade antinociceptiva de monoterpenos, o linalol inibe a formação "
-        "de NO e causa bloqueio de receptores NMDA."
-    ),
-    (
-        "Foi sugerido que seu precursor, tetrahidrolinalol, atua especificamente inibindo nNOS, modulando "
-        "mecanismos neurais relacionados à fisiopatologia da ansiedade e da depressão."
-    ),
-)
-
 
 def _grid_triangles(row_count: int, column_count: int) -> tuple[list[int], list[int], list[int]]:
     i_values: list[int] = []
@@ -2221,32 +1662,25 @@ def _tube_mesh(region: BrainRegion, hemisphere: Hemisphere | None) -> tuple[np.n
     return x_values.ravel(), y_values.ravel(), z_values.ravel(), i_values, j_values, k_values
 
 
-def _hover_text_for_region(region: BrainRegion) -> str:
-    if region.name in SLIDE_7_NNOS_SGC_NAMES:
+def _hover_text_for_region(region: BrainRegion, active_slide: str) -> str:
+    if active_slide.startswith("1.1.7"):
+        if region.name == "Núcleos da rafe":
+            return SERT_NET_HOVER_TEXT
+        if region.name == "Neurônios adrenérgicos centrais":
+            return SERT_NET_ION_HOVER_TEXT
+        if region.name == "Hipocampo":
+            return SERT_NET_BDNF_HOVER_TEXT
+        if region.name in {"Córtex pré-frontal (PFC)", "Amígdala", "Hipotálamo"}:
+            return SERT_NET_PROJECTION_HOVER_TEXT
+    if active_slide.startswith("1.1.2") and region.name in SLIDE_7_NNOS_SGC_NAMES:
         return NO_NNOS_SGC_HOVER_TEXT
-    if region.name in SLIDE_7_NOS_NO_NAMES:
-        return NO_NOS_NO_HOVER_TEXT
-    if region.name in SLIDE_7_INFLAMMATION_NAMES:
-        return NO_INFLAMMATION_HOVER_TEXT
-    if region.name in SLIDE_7_NMDA_NAMES:
-        return NO_NMDA_HOVER_TEXT
-    if region.name in SLIDE_7_CGMP_NAMES:
-        return NO_CGMP_HOVER_TEXT
-    if region.name in SLIDE_7_INHIBITOR_NAMES:
-        return NO_INHIBITOR_HOVER_TEXT
-    if region.name in SLIDE_7_LINALOOL_NAMES:
-        return NO_LINALOOL_HOVER_TEXT
-    if region.name in SLIDE_6_CYTOKINE_NAMES:
+    if region.name == "Circuito cortical-límbico imuno-inflamatório":
         return IMMUNE_CYTOKINE_HOVER_TEXT
-    if region.name in SLIDE_6_ANTIDEPRESSANT_NAMES:
+    if region.name == "Sistema serotoninérgico":
         return IMMUNE_ANTIDEPRESSANT_HOVER_TEXT
-    if region.name in SLIDE_6_TNF_NAMES:
+    if region.name == "Hipotálamo/eixo HPA":
         return IMMUNE_TNF_HOVER_TEXT
-    if region.name in SLIDE_6_ANTI_TNF_NAMES:
-        return IMMUNE_ANTI_TNF_HOVER_TEXT
-    if region.name in SLIDE_6_LPS_NAMES:
-        return IMMUNE_LPS_HOVER_TEXT
-    if region.name in SLIDE_6_CB1_NAMES:
+    if region.name == "Estriado: CB1/GABA":
         return IMMUNE_CB1_HOVER_TEXT
     if region.name in SLIDE_5_MESOCORTICOLIMBIC_NAMES:
         return NMDA_MESOCORTICOLIMBIC_HOVER_TEXT
@@ -2256,16 +1690,6 @@ def _hover_text_for_region(region: BrainRegion) -> str:
         return NMDA_MEDIAL_PFC_HOVER_TEXT
     if region.name in SLIDE_5_LIMBIC_CORTEX_NAMES:
         return NMDA_LIMBIC_CORTEX_HOVER_TEXT
-    if region.name in SLIDE_4_TRANSPORTER_NAMES:
-        return SERT_NET_HOVER_TEXT
-    if region.name in SLIDE_4_ION_NAMES:
-        return SERT_NET_ION_HOVER_TEXT
-    if region.name in SLIDE_4_PROJECTION_NAMES:
-        return SERT_NET_PROJECTION_HOVER_TEXT
-    if region.name in SLIDE_4_BDNF_NAMES:
-        return SERT_NET_BDNF_HOVER_TEXT
-    if region.name in SLIDE_4_BINDING_NAMES:
-        return SERT_NET_BINDING_HOVER_TEXT
     if region.name in SLIDE_3_NA_SYSTEM_NAMES:
         return NA_SYSTEM_HOVER_TEXT
     if region.name in SLIDE_3_AUTO_NAMES:
@@ -2314,6 +1738,7 @@ def _trace_for_region(
     opacity: float,
     show_legend: bool,
     legend_group: str,
+    active_slide: str,
 ) -> go.Mesh3d:
     x_values, y_values, z_values, i_values, j_values, k_values = _region_mesh(region, hemisphere)
     hemisphere_label = ""
@@ -2321,7 +1746,7 @@ def _trace_for_region(
         hemisphere_label = "<br>Hemisfério esquerdo"
     elif hemisphere == "right":
         hemisphere_label = "<br>Hemisfério direito"
-    hover_text = _hover_text_for_region(region)
+    hover_text = _hover_text_for_region(region, active_slide)
 
     return go.Mesh3d(
         x=x_values,
@@ -2386,6 +1811,7 @@ def build_brain_figure(
     context_regions: list[BrainRegion],
     selected_names: set[str],
     hemisphere_choice: str,
+    active_slide: str,
 ) -> go.Figure:
     fig = go.Figure()
 
@@ -2398,6 +1824,7 @@ def build_brain_figure(
                     opacity=_opacity_for_region(region, selected_names, context=True),
                     show_legend=index == 0,
                     legend_group=f"context-{region.name}",
+                    active_slide=active_slide,
                 )
             )
 
@@ -2410,6 +1837,7 @@ def build_brain_figure(
                     opacity=_opacity_for_region(region, selected_names, context=False),
                     show_legend=index == 0,
                     legend_group=region.name,
+                    active_slide=active_slide,
                 )
             )
 
@@ -2419,14 +1847,7 @@ def build_brain_figure(
         paper_bgcolor="#080b12",
         plot_bgcolor="#080b12",
         font={"color": "#e5e7eb"},
-        legend={
-            "orientation": "h",
-            "yanchor": "bottom",
-            "y": 0.01,
-            "xanchor": "center",
-            "x": 0.5,
-            "font": {"size": 11, "color": "#cbd5e1"},
-        },
+        showlegend=False,
         scene={
             "aspectmode": "data",
             "camera": {"eye": {"x": 1.65, "y": 1.65, "z": 1.05}},
@@ -2545,6 +1966,90 @@ def render_slide_notes(slide: str) -> None:
         )
         return
 
+    if slide.startswith("1.1.7"):
+        st.subheader("Transportadores SERT/NET")
+        st.caption("Modelo anatômico/funcional com mecanismos de recaptação descritos no hover")
+        st.write(
+            "Neste tópico, o modelo 3D mantém apenas sistemas de origem e áreas alvo: núcleos da rafe, "
+            "sistema noradrenérgico, córtex pré-frontal, amígdala, hipocampo e hipotálamo."
+        )
+        st.markdown("**SERT e NET**")
+        st.write(
+            "SERT e NET são tratados como mecanismos de recaptação associados às vias serotoninérgica e "
+            "noradrenérgica, não como estruturas anatômicas independentes no cérebro."
+        )
+        st.markdown("**Mecanismos moleculares**")
+        st.write(
+            "A dependência de Na+/Cl-, os bolsões S1/S2, o Asp-98 no Sítio A, a ligação do citalopram e "
+            "a seletividade dos inibidores aparecem no hover dos sistemas de origem."
+        )
+        st.markdown("**Áreas alvo e hipocampo**")
+        st.write(
+            "Córtex pré-frontal, amígdala, hipocampo e hipotálamo representam os alvos anatômicos das vias "
+            "5-HT/NA. No hipocampo, o hover também concentra neuroplasticidade, proliferação celular e BDNF."
+        )
+        return
+
+    if slide.startswith("1.1.3"):
+        st.subheader("Via inflamatória")
+        st.caption("Modelo anatômico/funcional com mecanismos imunes descritos no hover")
+        st.write(
+            "Neste tópico, o modelo 3D mantém apenas alvos cerebrais ou funcionais: circuito "
+            "cortical-límbico, sistema serotoninérgico, hipotálamo/eixo HPA e estriado."
+        )
+        st.markdown("**Circuito cortical-límbico**")
+        st.write(
+            "Agrupa os efeitos de TNF-α, IL-1β, IL-6, IL-10, LPS/endotoxina, microglia, plasticidade "
+            "sináptica, comportamento e LTP. Esses elementos são mecanismos inflamatórios, não estruturas "
+            "anatômicas separadas."
+        )
+        st.markdown("**Sistema serotoninérgico**")
+        st.write(
+            "Agrupa os efeitos sobre SERT, triptofano, indoleamina 2,3-dioxigenase, ativação "
+            "serotoninérgica em células imunes e a via cAMP-PKA-CREB associada a antidepressivos."
+        )
+        st.markdown("**Hipotálamo/eixo HPA e estriado**")
+        st.write(
+            "O hipotálamo representa a ativação do eixo HPA por TNF-α. O estriado concentra os mecanismos "
+            "relacionados ao sistema endocanabinoide CB1 e às sinapses GABA."
+        )
+        st.caption(
+            "Agentes como etanercepte e infliximabe, além da via TNF-α/TLR-4/NF-κB, permanecem como leitura "
+            "farmacológica no texto e no hover."
+        )
+        return
+
+    if slide.startswith("1.1.2"):
+        st.subheader("Via sGC/nNOS")
+        st.caption("Modelo anatômico com mecanismos moleculares descritos no hover")
+        st.write(
+            "Neste tópico, o modelo 3D mostra apenas as áreas cerebrais citadas no recorte: hipotálamo, "
+            "hipocampo e córtex pré-frontal. Os componentes bioquímicos da via não aparecem como estruturas "
+            "separadas no cérebro."
+        )
+        st.markdown("**Áreas com nNOS/sGC elevado em estresse**")
+        st.write(
+            "Em modelos animais de estresse, níveis elevados de nNOS e sGC foram descritos nessas três "
+            "áreas. Por isso, elas funcionam como o mapa anatômico do tópico."
+        )
+        st.markdown("**Mecanismo transversal**")
+        st.write(
+            "A nNOS produz óxido nítrico a partir de L-arginina. O NO pode ativar sGC, converter GTP em cGMP "
+            "e compor a via L-arginina-NO-cGMP, relacionada à regulação de processos comportamentais, "
+            "cognitivos e emocionais."
+        )
+        st.write(
+            "Quando excessivo, NO é associado a estresse oxidativo, neuroinflamação, permeabilidade da "
+            "barreira hematoencefálica, peroxinitrito, dano oxidativo e excitotoxicidade glutamatérgica por NMDA."
+        )
+        st.markdown("**Leitura farmacológica**")
+        st.write(
+            "A inibição de nNOS/sGC é tratada como alvo terapêutico potencial. O conteúdo farmacológico "
+            "inclui inibidores como 7NI e compostos como linalol/THL, mas esses elementos permanecem como "
+            "mecanismos no texto, não como objetos anatômicos."
+        )
+        return
+
     st.info("Estrutura reservada para a próxima teoria. O visualizador 3D já está preparado para receber novos recortes.")
 
 
@@ -2626,7 +2131,7 @@ with control_column:
         context_regions = regions_for_names(SLIDE_3_CONTEXT_NAMES)
     elif slide.startswith("1.1.7"):
         selected_groups = st.multiselect(
-            "Estruturas",
+            "Sistemas e áreas alvo",
             list(SLIDE_4_GROUPS.keys()),
             default=[],
         )
@@ -2655,7 +2160,7 @@ with control_column:
         context_regions = regions_for_names(SLIDE_5_CONTEXT_NAMES)
     elif slide.startswith("1.1.3"):
         selected_groups = st.multiselect(
-            "Estruturas",
+            "Alvos anatômicos/funcionais",
             list(SLIDE_6_GROUPS.keys()),
             default=[],
         )
@@ -2671,19 +2176,11 @@ with control_column:
         context_regions = regions_for_names(SLIDE_6_CONTEXT_NAMES)
     elif slide.startswith("1.1.2"):
         selected_groups = st.multiselect(
-            "Estruturas",
+            "Áreas anatômicas",
             list(SLIDE_7_GROUPS.keys()),
             default=[],
         )
-        visible_regions = regions_for_names(
-            SLIDE_7_NNOS_SGC_NAMES
-            | SLIDE_7_NOS_NO_NAMES
-            | SLIDE_7_INFLAMMATION_NAMES
-            | SLIDE_7_NMDA_NAMES
-            | SLIDE_7_CGMP_NAMES
-            | SLIDE_7_INHIBITOR_NAMES
-            | SLIDE_7_LINALOOL_NAMES
-        )
+        visible_regions = regions_for_names(SLIDE_7_NNOS_SGC_NAMES)
         selected_names = region_names_for_slide_7_groups(selected_groups)
         context_regions = regions_for_names(SLIDE_7_CONTEXT_NAMES)
     else:
@@ -2698,6 +2195,6 @@ with viewer_column:
         context_regions=context_regions,
         selected_names=selected_names,
         hemisphere_choice=hemisphere_choice,
+        active_slide=slide,
     )
     st.plotly_chart(figure, width="stretch", theme=None)
-
