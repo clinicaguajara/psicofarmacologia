@@ -15,11 +15,24 @@ def load_css() -> None:
     st.markdown(
         """
         <style>
+        html, body, [data-testid="stAppViewContainer"] {
+            background: #080b12;
+            color: #e5e7eb;
+        }
         .block-container {
             max-width: 100%;
             padding-top: 1.25rem;
             padding-left: 1.5rem;
             padding-right: 1.5rem;
+        }
+        [data-testid="stHeader"] {
+            background: rgba(8, 11, 18, 0);
+        }
+        [data-testid="stVerticalBlockBorderWrapper"],
+        [data-testid="stSelectbox"],
+        [data-testid="stMultiSelect"],
+        [data-testid="stRadio"] {
+            color: #e5e7eb;
         }
         div[data-testid="stToolbar"] {
             visibility: hidden;
@@ -2542,15 +2555,16 @@ def build_brain_figure(
     fig.update_layout(
         height=690,
         margin={"l": 0, "r": 0, "t": 12, "b": 0},
-        paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(0,0,0,0)",
+        paper_bgcolor="#080b12",
+        plot_bgcolor="#080b12",
+        font={"color": "#e5e7eb"},
         legend={
             "orientation": "h",
             "yanchor": "bottom",
             "y": 0.01,
             "xanchor": "center",
             "x": 0.5,
-            "font": {"size": 11},
+            "font": {"size": 11, "color": "#cbd5e1"},
         },
         scene={
             "aspectmode": "data",
@@ -2558,7 +2572,7 @@ def build_brain_figure(
             "xaxis": {"visible": False, "showgrid": False, "zeroline": False},
             "yaxis": {"visible": False, "showgrid": False, "zeroline": False},
             "zaxis": {"visible": False, "showgrid": False, "zeroline": False},
-            "bgcolor": "rgba(0,0,0,0)",
+            "bgcolor": "#080b12",
         },
     )
     return fig
