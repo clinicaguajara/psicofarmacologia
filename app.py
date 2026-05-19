@@ -388,43 +388,53 @@ REGIONS: tuple[BrainRegion, ...] = (
         radii=(0.15, 0.12, 0.10),
     ),
     BrainRegion(
-        name="Via noradrenérgica para neurônios pós-sinápticos",
+        name="Via NA-PFC",
         category="Slide 3 - Noradrenérgica",
         color="#E6C229",
-        function="Projeção esquemática do sistema noradrenérgico central.",
-        note="Conexão didática para neurônios pós-sinápticos.",
+        function="Projeção noradrenérgica para córtex pré-frontal.",
+        note="Conexão anatômico-funcional entre sistema noradrenérgico central e PFC.",
         kind="tube",
-        curve="na_postsynaptic",
+        curve="net_frontal",
         tube_radius=0.026,
     ),
     BrainRegion(
-        name="Via NA-dopaminérgica",
+        name="Via NA-amígdala",
+        category="Slide 3 - Noradrenérgica",
+        color="#E6C229",
+        function="Projeção noradrenérgica para amígdala.",
+        note="Conexão anatômico-funcional entre sistema noradrenérgico central e amígdala.",
+        kind="tube",
+        curve="net_amygdala",
+        tube_radius=0.024,
+    ),
+    BrainRegion(
+        name="Via NA-hipocampo",
+        category="Slide 3 - Noradrenérgica",
+        color="#E6C229",
+        function="Projeção noradrenérgica para hipocampo.",
+        note="Conexão anatômico-funcional entre sistema noradrenérgico central e hipocampo.",
+        kind="tube",
+        curve="net_hippocampus",
+        tube_radius=0.024,
+    ),
+    BrainRegion(
+        name="Via NA-VTA",
         category="Slide 3 - Noradrenérgica",
         color="#4E79A7",
-        function="Conexão esquemática para heterorreceptores em neurônios dopaminérgicos.",
-        note="Representação didática.",
+        function="Modulação noradrenérgica secundária de população dopaminérgica.",
+        note="Alvo secundário para heterorreceptores em neurônios dopaminérgicos.",
         kind="tube",
         curve="na_dopaminergic",
         tube_radius=0.022,
     ),
     BrainRegion(
-        name="Via NA-serotoninérgica",
+        name="Via NA-rafe",
         category="Slide 3 - Noradrenérgica",
         color="#4E79A7",
-        function="Conexão esquemática para heterorreceptores em neurônios serotoninérgicos.",
-        note="Representação didática.",
+        function="Modulação noradrenérgica secundária de população serotoninérgica.",
+        note="Alvo secundário para heterorreceptores em neurônios serotoninérgicos.",
         kind="tube",
         curve="na_serotonergic",
-        tube_radius=0.022,
-    ),
-    BrainRegion(
-        name="Via NA-glutamatérgica",
-        category="Slide 3 - Noradrenérgica",
-        color="#4E79A7",
-        function="Conexão esquemática para heterorreceptores em neurônios glutamatérgicos.",
-        note="Representação didática.",
-        kind="tube",
-        curve="na_glutamatergic",
         tube_radius=0.022,
     ),
     BrainRegion(
@@ -747,7 +757,9 @@ SLIDE_2_GROUPS = {
 
 SLIDE_3_NA_SYSTEM_NAMES = {
     "Neurônios adrenérgicos centrais",
-    "Via noradrenérgica para neurônios pós-sinápticos",
+    "Via NA-PFC",
+    "Via NA-amígdala",
+    "Via NA-hipocampo",
 }
 
 SLIDE_3_AUTO_NAMES = {
@@ -755,9 +767,8 @@ SLIDE_3_AUTO_NAMES = {
 }
 
 SLIDE_3_HETERO_NAMES = {
-    "Via NA-dopaminérgica",
-    "Via NA-serotoninérgica",
-    "Via NA-glutamatérgica",
+    "Via NA-VTA",
+    "Via NA-rafe",
 }
 
 SLIDE_3_POST_NAMES = {
@@ -1519,10 +1530,8 @@ def _tube_path(region: BrainRegion, hemisphere: Hemisphere | None) -> np.ndarray
         "vta_hippocampus": ((side * 0.04, -0.48, -0.72), (side * 0.48, -0.50, -0.30), 0.24),
         "vta_pfc": ((side * 0.04, -0.48, -0.72), (side * 0.48, 1.18, 0.28), 0.30),
         "pfc_amygdala": ((side * 0.52, 1.06, 0.24), (side * 0.50, 0.34, -0.34), 0.12),
-        "na_postsynaptic": ((side * 0.04, -0.56, -0.60), (side * 0.56, 0.78, 0.26), 0.26),
         "na_dopaminergic": ((side * 0.04, -0.56, -0.60), (side * 0.28, -0.32, -0.54), 0.08),
         "na_serotonergic": ((side * 0.04, -0.56, -0.60), (side * 0.06, -0.34, -0.98), 0.10),
-        "na_glutamatergic": ((side * 0.04, -0.56, -0.60), (side * 0.72, 0.68, 0.42), 0.30),
         "sert_limbic": ((side * 0.06, -0.34, -0.98), (side * 0.50, 0.10, -0.28), 0.22),
         "net_frontal": ((side * 0.04, -0.56, -0.60), (side * 0.50, 1.20, 0.30), 0.34),
         "net_amygdala": ((side * 0.04, -0.56, -0.60), (side * 0.50, 0.34, -0.34), 0.18),
@@ -1615,9 +1624,9 @@ def _hover_text_for_region(region: BrainRegion, active_slide: str) -> str:
         if region.name == "Córtex pré-frontal (PFC)":
             return DOPAMINE_PFC_HOVER_TEXT
     if active_slide.startswith("1.1.6"):
-        if region.name in {"Neurônios adrenérgicos centrais", "Via noradrenérgica para neurônios pós-sinápticos"}:
+        if region.name in {"Neurônios adrenérgicos centrais", "Via NA-PFC", "Via NA-amígdala", "Via NA-hipocampo"}:
             return NA_SYSTEM_HOVER_TEXT
-        if region.name in {"Via NA-dopaminérgica", "Via NA-serotoninérgica", "Via NA-glutamatérgica"}:
+        if region.name in {"Via NA-VTA", "Via NA-rafe"}:
             return ALPHA2_HETERO_HOVER_TEXT
         if region.name == "Córtex pós-sináptico noradrenérgico":
             return ALPHA2_POST_HOVER_TEXT
@@ -1931,8 +1940,8 @@ def render_slide_notes(slide: str) -> None:
         st.subheader("Receptores α2A e α2B")
         st.caption("Modelo noradrenérgico com subtipos e sítio de ligação descritos no hover")
         st.write(
-            "Neste tópico, o modelo 3D mantém o sistema noradrenérgico central, suas vias para populações "
-            "dopaminérgicas, serotoninérgicas e glutamatérgicas, e uma área cortical pós-sináptica."
+            "Neste tópico, o modelo 3D mantém o sistema noradrenérgico central, projeções específicas "
+            "para córtex pré-frontal, amígdala e hipocampo, além de VTA e rafe como alvos modulados secundários."
         )
         st.markdown("**Mecanismos aglutinados**")
         st.write(
