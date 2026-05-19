@@ -608,16 +608,26 @@ REGIONS: tuple[BrainRegion, ...] = (
         radii=(0.28, 0.22, 0.15),
     ),
     BrainRegion(
-        name="Sistema serotoninérgico",
+        name="Eixo HPA: hipotálamo-hipófise-adrenal",
         category="Slide 6 - Imuno-inflamatória",
-        color="#4E79A7",
-        function="Sistema serotoninérgico associado a SERT, triptofano e efeitos de antidepressivos.",
-        note="Representação funcional no tronco encefálico.",
+        color="#F28E2B",
+        function="Projeção funcional do eixo hipotálamo-hipófise-adrenal ativado por TNF-α.",
+        note="Eixo vertical esquemático saindo do hipotálamo.",
         kind="cylinder",
-        hemispheres=("left", "right"),
-        center=(0.0, -0.34, -0.98),
-        radii=(0.07, 0.09, 0.0),
-        z_range=(-1.38, -0.52),
+        hemispheres=(),
+        center=(0.0, 0.05, -0.82),
+        radii=(0.035, 0.035, 0.0),
+        z_range=(-1.16, -0.58),
+    ),
+    BrainRegion(
+        name="Projeções rafe-corticolímbicas",
+        category="Slide 6 - Imuno-inflamatória",
+        color="#E15759",
+        function="Projeções serotoninérgicas da rafe para o circuito cortical-límbico.",
+        note="Via funcional bilateral, sem representar moléculas como objetos.",
+        kind="tube",
+        curve="rafe_corticolimbic",
+        tube_radius=0.024,
     ),
     BrainRegion(
         name="Circuito cortical-límbico imuno-inflamatório",
@@ -961,12 +971,13 @@ SLIDE_6_CYTOKINE_NAMES = {
 }
 
 SLIDE_6_ANTIDEPRESSANT_NAMES = {
-    "Sistema serotoninérgico",
+    "Núcleos da rafe",
+    "Projeções rafe-corticolímbicas",
 }
 
 SLIDE_6_TNF_NAMES = {
     "Hipotálamo/eixo HPA",
-    "Sistema serotoninérgico",
+    "Eixo HPA: hipotálamo-hipófise-adrenal",
     "Circuito cortical-límbico imuno-inflamatório",
 }
 
@@ -977,7 +988,9 @@ SLIDE_6_ANTI_TNF_NAMES = {
 
 SLIDE_6_LPS_NAMES = {
     "Hipotálamo/eixo HPA",
-    "Sistema serotoninérgico",
+    "Eixo HPA: hipotálamo-hipófise-adrenal",
+    "Núcleos da rafe",
+    "Projeções rafe-corticolímbicas",
     "Circuito cortical-límbico imuno-inflamatório",
 }
 
@@ -991,7 +1004,7 @@ SLIDE_6_CONTEXT_NAMES = {
 
 SLIDE_6_GROUPS = {
     "Circuito cortical-límbico: citocinas e microglia": SLIDE_6_CYTOKINE_NAMES,
-    "Sistema serotoninérgico: antidepressivos, SERT e triptofano": SLIDE_6_ANTIDEPRESSANT_NAMES,
+    "Rafe -> circuito cortical-límbico": SLIDE_6_ANTIDEPRESSANT_NAMES,
     "Hipotálamo/eixo HPA: TNF-α e estresse": SLIDE_6_TNF_NAMES,
     "Alvos anti-TNF-α: TLR-4/NF-κB": SLIDE_6_ANTI_TNF_NAMES,
     "LPS, IL-6/IL-1β e LTP": SLIDE_6_LPS_NAMES,
@@ -1379,10 +1392,10 @@ IMMUNE_CYTOKINE_HOVER_TEXT = _wrap_hover_text(
 )
 
 IMMUNE_ANTIDEPRESSANT_HOVER_TEXT = _wrap_hover_text(
-    "Sistema serotoninérgico: SERT, triptofano e antidepressivos",
+    "Rafe -> circuito cortical-límbico",
     (
-        "O sistema serotoninérgico é usado como referência funcional para os efeitos de TNF-α sobre SERT, "
-        "metabolismo do triptofano e resposta a antidepressivos."
+        "Os núcleos da rafe são usados como referência anatômica para a participação serotoninérgica na "
+        "via inflamatória. As projeções indicam o alcance funcional para o circuito cortical-límbico."
     ),
     (
         "TNF-α aumenta a atividade do transportador 5-HT e estimula indoleamina 2,3-dioxigenase, diminuindo "
@@ -1593,6 +1606,7 @@ def _tube_path(region: BrainRegion, hemisphere: Hemisphere | None) -> np.ndarray
         "net_amygdala": ((side * 0.04, -0.56, -0.60), (side * 0.50, 0.34, -0.34), 0.18),
         "net_hippocampus": ((side * 0.04, -0.56, -0.60), (side * 0.48, -0.50, -0.30), 0.22),
         "net_hypothalamus": ((side * 0.04, -0.56, -0.60), (side * 0.10, 0.05, -0.56), 0.10),
+        "rafe_corticolimbic": ((side * 0.06, -0.34, -0.98), (side * 0.62, 0.46, 0.30), 0.32),
         "gaba_pyramidal": ((side * 0.46, 0.92, 0.34), (side * 0.78, 0.64, 0.44), 0.08),
         "nmda_nnos_no": ((side * 0.64, 0.68, 0.38), (side * 0.12, -0.04, 0.60), 0.18),
         "arginine_no_cgmp": ((side * 0.04, -0.08, 0.62), (side * 0.04, 0.92, 0.50), 0.22),
@@ -1663,6 +1677,11 @@ def _tube_mesh(region: BrainRegion, hemisphere: Hemisphere | None) -> tuple[np.n
 
 
 def _hover_text_for_region(region: BrainRegion, active_slide: str) -> str:
+    if active_slide.startswith("1.1.3"):
+        if region.name in {"Núcleos da rafe", "Projeções rafe-corticolímbicas"}:
+            return IMMUNE_ANTIDEPRESSANT_HOVER_TEXT
+        if region.name in {"Hipotálamo/eixo HPA", "Eixo HPA: hipotálamo-hipófise-adrenal"}:
+            return IMMUNE_TNF_HOVER_TEXT
     if active_slide.startswith("1.1.7"):
         if region.name == "Núcleos da rafe":
             return SERT_NET_HOVER_TEXT
@@ -1676,8 +1695,6 @@ def _hover_text_for_region(region: BrainRegion, active_slide: str) -> str:
         return NO_NNOS_SGC_HOVER_TEXT
     if region.name == "Circuito cortical-límbico imuno-inflamatório":
         return IMMUNE_CYTOKINE_HOVER_TEXT
-    if region.name == "Sistema serotoninérgico":
-        return IMMUNE_ANTIDEPRESSANT_HOVER_TEXT
     if region.name == "Hipotálamo/eixo HPA":
         return IMMUNE_TNF_HOVER_TEXT
     if region.name == "Estriado: CB1/GABA":
@@ -1995,7 +2012,7 @@ def render_slide_notes(slide: str) -> None:
         st.caption("Modelo anatômico/funcional com mecanismos imunes descritos no hover")
         st.write(
             "Neste tópico, o modelo 3D mantém apenas alvos cerebrais ou funcionais: circuito "
-            "cortical-límbico, sistema serotoninérgico, hipotálamo/eixo HPA e estriado."
+            "cortical-límbico, núcleos da rafe com projeções corticolímbicas, hipotálamo/eixo HPA e estriado."
         )
         st.markdown("**Circuito cortical-límbico**")
         st.write(
@@ -2003,15 +2020,16 @@ def render_slide_notes(slide: str) -> None:
             "sináptica, comportamento e LTP. Esses elementos são mecanismos inflamatórios, não estruturas "
             "anatômicas separadas."
         )
-        st.markdown("**Sistema serotoninérgico**")
+        st.markdown("**Rafe -> circuito cortical-límbico**")
         st.write(
-            "Agrupa os efeitos sobre SERT, triptofano, indoleamina 2,3-dioxigenase, ativação "
-            "serotoninérgica em células imunes e a via cAMP-PKA-CREB associada a antidepressivos."
+            "Os núcleos da rafe e suas projeções para o circuito cortical-límbico representam a participação "
+            "serotoninérgica. O hover agrupa ativação serotoninérgica em células imunes, SERT, triptofano, "
+            "indoleamina 2,3-dioxigenase e a via cAMP-PKA-CREB associada a antidepressivos."
         )
         st.markdown("**Hipotálamo/eixo HPA e estriado**")
         st.write(
-            "O hipotálamo representa a ativação do eixo HPA por TNF-α. O estriado concentra os mecanismos "
-            "relacionados ao sistema endocanabinoide CB1 e às sinapses GABA."
+            "O hipotálamo e o eixo vertical HPA representam a ativação hipotálamo-hipófise-adrenal por TNF-α. "
+            "O estriado concentra os mecanismos relacionados ao sistema endocanabinoide CB1 e às sinapses GABA."
         )
         st.caption(
             "Agentes como etanercepte e infliximabe, além da via TNF-α/TLR-4/NF-κB, permanecem como leitura "
