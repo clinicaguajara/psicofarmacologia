@@ -346,68 +346,25 @@ REGIONS: tuple[BrainRegion, ...] = (
         tube_radius=0.026,
     ),
     BrainRegion(
-        name="D1-like na amígdala",
-        category="Slide 2 - Dopaminérgica",
-        color="#E15759",
-        function="Representação do papel de receptores D1-like na amígdala.",
-        note="Sobreposição didática na amígdala.",
-        kind="ellipsoid",
-        center=(0.0, 0.34, -0.34),
-        radii=(0.18, 0.20, 0.15),
-        pair_offset=0.50,
-    ),
-    BrainRegion(
-        name="D2-like PFC-amígdala",
+        name="Via PFC-amígdala",
         category="Slide 2 - Dopaminérgica",
         color="#4E79A7",
-        function="Representação de terminais pré-sinápticos do PFC e efeito GABAérgico na amígdala.",
+        function="Conexão funcional entre córtex pré-frontal e amígdala.",
         note="Conexão didática entre PFC e amígdala.",
         kind="tube",
         curve="pfc_amygdala",
         tube_radius=0.032,
     ),
     BrainRegion(
-        name="Complexo D1-D2 no núcleo accumbens",
+        name="Caudado/estriado",
         category="Slide 2 - Dopaminérgica",
         color="#B07AA1",
-        function="Representação de complexos heteroméricos D1-D2 no núcleo accumbens.",
-        note="Sobreposição didática no núcleo accumbens.",
-        kind="ellipsoid",
-        center=(0.0, 0.52, -0.36),
-        radii=(0.17, 0.19, 0.13),
-        pair_offset=0.30,
-    ),
-    BrainRegion(
-        name="Complexo D1-D2 no caudado/estriado",
-        category="Slide 2 - Dopaminérgica",
-        color="#B07AA1",
-        function="Representação de maior densidade de D1-D2 em caudado/estriado descrita no artigo.",
+        function="Região estriatal/caudada citada no contexto de complexos D1-D2.",
         note="Representação bilateral simplificada.",
         kind="ellipsoid",
         center=(0.0, 0.02, -0.10),
         radii=(0.18, 0.32, 0.13),
         pair_offset=0.36,
-    ),
-    BrainRegion(
-        name="BDNF/TrkB no núcleo accumbens",
-        category="Slide 2 - Dopaminérgica",
-        color="#D62728",
-        function="Representação do efeito depressor em regiões mesolímbicas.",
-        note="Sobreposição didática no núcleo accumbens.",
-        kind="ellipsoid",
-        center=(0.0, 0.52, -0.36),
-        radii=(0.19, 0.21, 0.15),
-        pair_offset=0.30,
-    ),
-    BrainRegion(
-        name="BDNF/TrkB no hipocampo",
-        category="Slide 2 - Dopaminérgica",
-        color="#59A14F",
-        function="Representação do efeito antidepressivo no hipocampo descrito no artigo.",
-        note="Sobreposição didática no hipocampo.",
-        kind="tube",
-        curve="hippocampus",
-        tube_radius=0.052,
     ),
     BrainRegion(
         name="Córtex pré-frontal (PFC)",
@@ -418,16 +375,6 @@ REGIONS: tuple[BrainRegion, ...] = (
         kind="cortex",
         theta_range=(0.10, 0.72),
         phi_range=(0.00, 0.78),
-    ),
-    BrainRegion(
-        name="BDNF/TrkB no córtex pré-frontal",
-        category="Slide 2 - Dopaminérgica",
-        color="#59A14F",
-        function="Representação do efeito antidepressivo no PFC descrito no artigo.",
-        note="Sobreposição didática no córtex pré-frontal.",
-        kind="cortex",
-        theta_range=(0.12, 0.70),
-        phi_range=(0.02, 0.76),
     ),
     BrainRegion(
         name="Neurônios adrenérgicos centrais",
@@ -449,50 +396,6 @@ REGIONS: tuple[BrainRegion, ...] = (
         kind="tube",
         curve="na_postsynaptic",
         tube_radius=0.026,
-    ),
-    BrainRegion(
-        name="α2-autorreceptores pré-sinápticos",
-        category="Slide 3 - Noradrenérgica",
-        color="#F28E2B",
-        function="Autorreceptores α2 em membranas pré-sinápticas de neurônios adrenérgicos.",
-        note="Representação sobre o nó noradrenérgico central.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, -0.56, -0.60),
-        radii=(0.21, 0.17, 0.13),
-    ),
-    BrainRegion(
-        name="α2-heterorreceptores dopaminérgicos",
-        category="Slide 3 - Noradrenérgica",
-        color="#4E79A7",
-        function="Heterorreceptores α2 em neurônios dopaminérgicos.",
-        note="Representação didática em população dopaminérgica.",
-        kind="ellipsoid",
-        center=(0.0, -0.32, -0.54),
-        radii=(0.12, 0.10, 0.09),
-        pair_offset=0.28,
-    ),
-    BrainRegion(
-        name="α2-heterorreceptores serotoninérgicos",
-        category="Slide 3 - Noradrenérgica",
-        color="#4E79A7",
-        function="Heterorreceptores α2 em neurônios serotoninérgicos.",
-        note="Representação didática na região serotoninérgica.",
-        kind="cylinder",
-        hemispheres=("left", "right"),
-        center=(0.0, -0.34, -0.98),
-        radii=(0.06, 0.08, 0.0),
-        z_range=(-1.38, -0.52),
-    ),
-    BrainRegion(
-        name="α2-heterorreceptores glutamatérgicos",
-        category="Slide 3 - Noradrenérgica",
-        color="#4E79A7",
-        function="Heterorreceptores α2 em neurônios glutamatérgicos.",
-        note="Representação cortical esquemática.",
-        kind="cortex",
-        theta_range=(0.40, 1.75),
-        phi_range=(0.02, 0.80),
     ),
     BrainRegion(
         name="Via NA-dopaminérgica",
@@ -525,36 +428,14 @@ REGIONS: tuple[BrainRegion, ...] = (
         tube_radius=0.022,
     ),
     BrainRegion(
-        name="Ativação α2 pós-sináptica",
+        name="Córtex pós-sináptico noradrenérgico",
         category="Slide 3 - Noradrenérgica",
         color="#59A14F",
-        function="Modulação pós-sináptica da excitabilidade neuronal por canais iônicos.",
+        function="Área cortical usada como alvo funcional da modulação pós-sináptica noradrenérgica.",
         note="Representação cortical esquemática.",
         kind="cortex",
         theta_range=(0.70, 2.05),
         phi_range=(-0.10, 0.72),
-    ),
-    BrainRegion(
-        name="Subtipos α2A/α2B/α2C",
-        category="Slide 3 - Noradrenérgica",
-        color="#B07AA1",
-        function="Bloco esquemático dos subtipos α2A, α2B e α2C.",
-        note="Representação conceitual, não anatômica.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.16, 0.48),
-        radii=(0.30, 0.16, 0.11),
-    ),
-    BrainRegion(
-        name="Sítio de ligação α2A/α2B",
-        category="Slide 3 - Noradrenérgica",
-        color="#B07AA1",
-        function="Bloco esquemático do sítio de ligação descrito no texto.",
-        note="Representação conceitual, não anatômica.",
-        kind="ellipsoid",
-        hemispheres=(),
-        center=(0.0, 0.50, 0.58),
-        radii=(0.22, 0.12, 0.09),
     ),
     BrainRegion(
         name="Regiões mesocorticolímbicas",
@@ -824,6 +705,8 @@ SLIDE_1_GROUPS = {
 SLIDE_2_MESOLIMBIC_NAMES = {
     "Área tegmental ventral (VTA)",
     "Núcleo accumbens (NAc)",
+    "Amígdala",
+    "Hipocampo",
     "Via VTA-NAc",
     "Via VTA-amígdala",
     "Via VTA-hipocampo",
@@ -832,22 +715,22 @@ SLIDE_2_MESOLIMBIC_NAMES = {
 }
 
 SLIDE_2_D1_NAMES = {
-    "D1-like na amígdala",
+    "Amígdala",
 }
 
 SLIDE_2_D2_NAMES = {
-    "D2-like PFC-amígdala",
+    "Via PFC-amígdala",
 }
 
 SLIDE_2_D1_D2_NAMES = {
-    "Complexo D1-D2 no núcleo accumbens",
-    "Complexo D1-D2 no caudado/estriado",
+    "Núcleo accumbens (NAc)",
+    "Caudado/estriado",
 }
 
 SLIDE_2_BDNF_NAMES = {
-    "BDNF/TrkB no núcleo accumbens",
-    "BDNF/TrkB no hipocampo",
-    "BDNF/TrkB no córtex pré-frontal",
+    "Núcleo accumbens (NAc)",
+    "Hipocampo",
+    "Córtex pré-frontal (PFC)",
 }
 
 SLIDE_2_CONTEXT_NAMES = {
@@ -868,25 +751,21 @@ SLIDE_3_NA_SYSTEM_NAMES = {
 }
 
 SLIDE_3_AUTO_NAMES = {
-    "α2-autorreceptores pré-sinápticos",
+    "Neurônios adrenérgicos centrais",
 }
 
 SLIDE_3_HETERO_NAMES = {
-    "α2-heterorreceptores dopaminérgicos",
-    "α2-heterorreceptores serotoninérgicos",
-    "α2-heterorreceptores glutamatérgicos",
     "Via NA-dopaminérgica",
     "Via NA-serotoninérgica",
     "Via NA-glutamatérgica",
 }
 
 SLIDE_3_POST_NAMES = {
-    "Ativação α2 pós-sináptica",
+    "Córtex pós-sináptico noradrenérgico",
 }
 
 SLIDE_3_SUBTYPE_NAMES = {
-    "Subtipos α2A/α2B/α2C",
-    "Sítio de ligação α2A/α2B",
+    "Neurônios adrenérgicos centrais",
 }
 
 SLIDE_3_CONTEXT_NAMES = {
@@ -1159,6 +1038,40 @@ BDNF_HOVER_TEXT = _wrap_hover_text(
     ),
 )
 
+DOPAMINE_NAC_HOVER_TEXT = _wrap_hover_text(
+    "Núcleo accumbens - D1/D2 e BDNF/TrkB",
+    (
+        "O núcleo accumbens é mantido como alvo anatômico mesolímbico. A via VTA-NAc participa de recompensa, "
+        "depressão e ansiedade."
+    ),
+    (
+        "Os complexos heteroméricos D1-D2 e a sinalização BDNF/TrkB são mecanismos associados a essa região "
+        "e ficam no hover, sem sobreposição molecular no modelo."
+    ),
+)
+
+DOPAMINE_HIPPOCAMPUS_HOVER_TEXT = _wrap_hover_text(
+    "Hipocampo - via mesolímbica e BDNF/TrkB",
+    (
+        "O hipocampo é mantido como alvo anatômico da via dopaminérgica mesolímbica."
+    ),
+    (
+        "A sinalização BDNF/TrkB é tratada como mecanismo regional, com efeito antidepressivo descrito para "
+        "hipocampo e córtex pré-frontal."
+    ),
+)
+
+DOPAMINE_PFC_HOVER_TEXT = _wrap_hover_text(
+    "Córtex pré-frontal - dopamina e BDNF/TrkB",
+    (
+        "O córtex pré-frontal é mantido como alvo anatômico da via VTA-PFC e da conexão funcional PFC-amígdala."
+    ),
+    (
+        "Terminais pré-sinápticos, receptores D2-like e sinalização BDNF/TrkB permanecem como mecanismos "
+        "descritos no hover."
+    ),
+)
+
 NA_SYSTEM_HOVER_TEXT = _wrap_hover_text(
     "Sistema noradrenérgico central",
     (
@@ -1167,6 +1080,15 @@ NA_SYSTEM_HOVER_TEXT = _wrap_hover_text(
     (
         "Os α-adrenorreceptores são acoplados a proteína G regulatória e classificados nos subtipos "
         "α1A, α1B, α1D, α2A, α2B e α2C."
+    ),
+    (
+        "Os α2-autorreceptores ficam em membranas pré-sinápticas de neurônios adrenérgicos e regulam a "
+        "liberação de noradrenalina e adrenalina por sinalização Gi/o, com redução de cAMP, modulação de "
+        "Ca2+ e ativação de canais de K+."
+    ),
+    (
+        "Subtipos α2A, α2B e α2C e detalhes de sítio de ligação permanecem como leitura molecular no hover, "
+        "não como estruturas separadas no modelo."
     ),
 )
 
@@ -1677,6 +1599,28 @@ def _tube_mesh(region: BrainRegion, hemisphere: Hemisphere | None) -> tuple[np.n
 
 
 def _hover_text_for_region(region: BrainRegion, active_slide: str) -> str:
+    if active_slide.startswith("1.1.5"):
+        if region.name in {"Área tegmental ventral (VTA)", "Via VTA-NAc", "Via VTA-amígdala", "Via VTA-hipocampo", "Via VTA-PFC"}:
+            return MESOLIMBIC_DOPAMINE_HOVER_TEXT
+        if region.name == "Núcleo accumbens (NAc)":
+            return DOPAMINE_NAC_HOVER_TEXT
+        if region.name == "Amígdala":
+            return D1_HOVER_TEXT
+        if region.name == "Via PFC-amígdala":
+            return D2_HOVER_TEXT
+        if region.name == "Caudado/estriado":
+            return D1_D2_HOVER_TEXT
+        if region.name == "Hipocampo":
+            return DOPAMINE_HIPPOCAMPUS_HOVER_TEXT
+        if region.name == "Córtex pré-frontal (PFC)":
+            return DOPAMINE_PFC_HOVER_TEXT
+    if active_slide.startswith("1.1.6"):
+        if region.name in {"Neurônios adrenérgicos centrais", "Via noradrenérgica para neurônios pós-sinápticos"}:
+            return NA_SYSTEM_HOVER_TEXT
+        if region.name in {"Via NA-dopaminérgica", "Via NA-serotoninérgica", "Via NA-glutamatérgica"}:
+            return ALPHA2_HETERO_HOVER_TEXT
+        if region.name == "Córtex pós-sináptico noradrenérgico":
+            return ALPHA2_POST_HOVER_TEXT
     if active_slide.startswith("1.1.3"):
         if region.name in {"Núcleos da rafe", "Projeções rafe-corticolímbicas"}:
             return IMMUNE_ANTIDEPRESSANT_HOVER_TEXT
@@ -1707,26 +1651,6 @@ def _hover_text_for_region(region: BrainRegion, active_slide: str) -> str:
         return NMDA_MEDIAL_PFC_HOVER_TEXT
     if region.name in SLIDE_5_LIMBIC_CORTEX_NAMES:
         return NMDA_LIMBIC_CORTEX_HOVER_TEXT
-    if region.name in SLIDE_3_NA_SYSTEM_NAMES:
-        return NA_SYSTEM_HOVER_TEXT
-    if region.name in SLIDE_3_AUTO_NAMES:
-        return ALPHA2_AUTO_HOVER_TEXT
-    if region.name in SLIDE_3_HETERO_NAMES:
-        return ALPHA2_HETERO_HOVER_TEXT
-    if region.name in SLIDE_3_POST_NAMES:
-        return ALPHA2_POST_HOVER_TEXT
-    if region.name in SLIDE_3_SUBTYPE_NAMES:
-        return ALPHA2_SUBTYPE_HOVER_TEXT
-    if region.name in SLIDE_2_MESOLIMBIC_NAMES:
-        return MESOLIMBIC_DOPAMINE_HOVER_TEXT
-    if region.name in SLIDE_2_D1_NAMES:
-        return D1_HOVER_TEXT
-    if region.name in SLIDE_2_D2_NAMES:
-        return D2_HOVER_TEXT
-    if region.name in SLIDE_2_D1_D2_NAMES:
-        return D1_D2_HOVER_TEXT
-    if region.name in SLIDE_2_BDNF_NAMES:
-        return BDNF_HOVER_TEXT
     if region.name in SLIDE_1_RAPHE_NAMES:
         return RAPHE_HOVER_TEXT
     if region.name in SLIDE_1_LIMBIC_NAMES or region.name in SLIDE_1_CORTICAL_NAMES:
@@ -1980,6 +1904,40 @@ def render_slide_notes(slide: str) -> None:
         st.caption(
             "O tópico 1.1.1 destaca dois papéis conceituais do 5-HT1A: autorreceptores na rafe e "
             "heterorreceptores em áreas límbicas/corticais."
+        )
+        return
+
+    if slide.startswith("1.1.5"):
+        st.subheader("Receptores dopaminérgicos D1 e D2")
+        st.caption("Modelo anatômico/funcional com mecanismos dopaminérgicos no hover")
+        st.write(
+            "Neste tópico, o modelo 3D mantém VTA, núcleo accumbens, amígdala, hipocampo, córtex "
+            "pré-frontal, caudado/estriado e vias funcionais entre essas áreas."
+        )
+        st.markdown("**Mecanismos aglutinados**")
+        st.write(
+            "Receptores D1-like/D2-like, complexos heteroméricos D1-D2 e sinalização BDNF/TrkB não aparecem "
+            "como estruturas separadas. Esses mecanismos foram movidos para os hovers das regiões "
+            "correspondentes."
+        )
+        st.markdown("**Vias mantidas**")
+        st.write(
+            "As conexões VTA-NAc, VTA-amígdala, VTA-hipocampo, VTA-PFC e PFC-amígdala permanecem como vias "
+            "funcionais, porque ajudam a localizar o circuito dopaminérgico."
+        )
+        return
+
+    if slide.startswith("1.1.6"):
+        st.subheader("Receptores α2A e α2B")
+        st.caption("Modelo noradrenérgico com subtipos e sítio de ligação descritos no hover")
+        st.write(
+            "Neste tópico, o modelo 3D mantém o sistema noradrenérgico central, suas vias para populações "
+            "dopaminérgicas, serotoninérgicas e glutamatérgicas, e uma área cortical pós-sináptica."
+        )
+        st.markdown("**Mecanismos aglutinados**")
+        st.write(
+            "Autorreceptores, heterorreceptores, subtipos α2A/α2B/α2C, acoplamento Gi/o, canais iônicos "
+            "e sítio de ligação α2A/α2B ficam nos hovers. Eles não são desenhados como objetos anatômicos."
         )
         return
 
