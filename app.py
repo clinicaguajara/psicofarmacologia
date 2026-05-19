@@ -542,6 +542,26 @@ REGIONS: tuple[BrainRegion, ...] = (
         pair_offset=0.36,
     ),
     BrainRegion(
+        name="Projeção tronco-hipocampo ventral",
+        category="Slide 7 - NO/cGMP",
+        color="#4E79A7",
+        function="Projeção funcional do tronco encefálico para o hipocampo ventral.",
+        note="Via funcional relacionada à memória emocional.",
+        kind="tube",
+        curve="brainstem_ventral_hippocampus",
+        tube_radius=0.024,
+    ),
+    BrainRegion(
+        name="Projeção tronco-PFC medial",
+        category="Slide 7 - NO/cGMP",
+        color="#59A14F",
+        function="Projeção funcional do tronco encefálico para o córtex pré-frontal medial.",
+        note="Via funcional relacionada à integração cognitivo-emocional.",
+        kind="tube",
+        curve="brainstem_medial_pfc",
+        tube_radius=0.024,
+    ),
+    BrainRegion(
         name="Córtex pré-frontal medial (5-HT1A)",
         category="Receptores 5-HT1A (córtex)",
         color="#4E79A7",
@@ -902,14 +922,15 @@ SLIDE_6_GROUPS = {
 }
 
 SLIDE_7_NNOS_SGC_NAMES = {
+    "Tronco encefálico",
     "Hipotálamo",
-    "Hipocampo",
-    "Córtex pré-frontal (PFC)",
+    "Hipocampo ventral",
+    "Córtex pré-frontal medial",
+    "Projeção tronco-hipocampo ventral",
+    "Projeção tronco-PFC medial",
 }
 
-SLIDE_7_CONTEXT_NAMES = {
-    "Tronco encefálico",
-}
+SLIDE_7_CONTEXT_NAMES = set()
 
 SLIDE_7_GROUPS = {
     "Áreas anatômicas associadas à via sGC/nNOS": SLIDE_7_NNOS_SGC_NAMES,
@@ -1403,13 +1424,22 @@ IMMUNE_CB1_HOVER_TEXT = _wrap_hover_text(
 )
 
 NO_NNOS_SGC_HOVER_TEXT = _wrap_hover_text(
-    "Via nNOS/sGC em áreas de estresse",
+    "Via sGC/nNOS: tronco, hipocampo ventral e PFC medial",
     (
-        "Hipotálamo, hipocampo e córtex pré-frontal são usados aqui como referência anatômica para os "
-        "achados de níveis elevados de nNOS e sGC em modelos animais de estresse."
+        "O tronco encefálico é usado como referência anatômica para um núcleo de origem da via, enquanto "
+        "hipocampo ventral e córtex pré-frontal medial representam áreas-alvo para memória emocional e "
+        "integração cognitivo-emocional."
     ),
     (
-        "A parte molecular é transversal ao hover: nNOS produz NO a partir de L-arginina; o NO pode ativar "
+        "O hipotálamo permanece no mapa porque níveis elevados de nNOS e sGC também foram descritos nessa "
+        "área em modelos animais de estresse."
+    ),
+    (
+        "As projeções tronco-hipocampo ventral e tronco-PFC medial organizam a leitura funcional: a via "
+        "sGC/nNOS pode modular plasticidade, excitabilidade neuronal e resposta emocional."
+    ),
+    (
+        "A parte molecular fica transversal ao hover: nNOS produz NO a partir de L-arginina; o NO pode ativar "
         "sGC, converter GTP em cGMP e participar da via L-arginina-NO-cGMP relacionada a processos "
         "comportamentais, cognitivos e emocionais."
     ),
@@ -1537,6 +1567,8 @@ def _tube_path(region: BrainRegion, hemisphere: Hemisphere | None) -> np.ndarray
         "net_amygdala": ((side * 0.04, -0.56, -0.60), (side * 0.50, 0.34, -0.34), 0.18),
         "net_hippocampus": ((side * 0.04, -0.56, -0.60), (side * 0.48, -0.50, -0.30), 0.22),
         "net_hypothalamus": ((side * 0.04, -0.56, -0.60), (side * 0.10, 0.05, -0.56), 0.10),
+        "brainstem_ventral_hippocampus": ((side * 0.04, -0.52, -0.72), (side * 0.48, -0.50, -0.30), 0.24),
+        "brainstem_medial_pfc": ((side * 0.04, -0.52, -0.72), (side * 0.46, 1.12, 0.28), 0.34),
         "rafe_corticolimbic": ((side * 0.06, -0.34, -0.98), (side * 0.62, 0.46, 0.30), 0.32),
         "gaba_pyramidal": ((side * 0.46, 0.92, 0.34), (side * 0.78, 0.64, 0.44), 0.08),
         "nmda_nnos_no": ((side * 0.64, 0.68, 0.38), (side * 0.12, -0.04, 0.60), 0.18),
@@ -2008,20 +2040,23 @@ def render_slide_notes(slide: str) -> None:
         st.subheader("Via sGC/nNOS")
         st.caption("Modelo anatômico com mecanismos moleculares descritos no hover")
         st.write(
-            "Neste tópico, o modelo 3D mostra apenas as áreas cerebrais citadas no recorte: hipotálamo, "
-            "hipocampo e córtex pré-frontal. Os componentes bioquímicos da via não aparecem como estruturas "
-            "separadas no cérebro."
+            "Neste tópico, o modelo 3D mostra tronco encefálico, hipotálamo, hipocampo ventral e córtex "
+            "pré-frontal medial, com projeções funcionais do tronco para hipocampo ventral e PFC medial."
         )
-        st.markdown("**Áreas com nNOS/sGC elevado em estresse**")
+        st.markdown("**Eixo anatômico-funcional**")
         st.write(
-            "Em modelos animais de estresse, níveis elevados de nNOS e sGC foram descritos nessas três "
-            "áreas. Por isso, elas funcionam como o mapa anatômico do tópico."
+            "O tronco encefálico representa o núcleo de origem da via. O hipocampo ventral participa da "
+            "memória emocional, enquanto o córtex pré-frontal medial integra processamento cognitivo e emocional."
+        )
+        st.write(
+            "O hipotálamo permanece no mapa porque níveis elevados de nNOS e sGC foram descritos nessa área "
+            "em modelos animais de estresse."
         )
         st.markdown("**Mecanismo transversal**")
         st.write(
-            "A nNOS produz óxido nítrico a partir de L-arginina. O NO pode ativar sGC, converter GTP em cGMP "
-            "e compor a via L-arginina-NO-cGMP, relacionada à regulação de processos comportamentais, "
-            "cognitivos e emocionais."
+            "A ativação sGC/nNOS modula plasticidade, excitabilidade neuronal e resposta emocional nessas "
+            "áreas. A nNOS produz NO a partir de L-arginina; o NO pode ativar sGC, converter GTP em cGMP "
+            "e compor a via L-arginina-NO-cGMP."
         )
         st.write(
             "Quando excessivo, NO é associado a estresse oxidativo, neuroinflamação, permeabilidade da "
